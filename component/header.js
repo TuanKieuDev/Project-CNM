@@ -3,7 +3,7 @@ const style = `
     background-color: #081b27 ;
     display: flex;
     justify-content:space-around;
-    width:100vh
+  
 }
 .log a{
     color: #00F706;
