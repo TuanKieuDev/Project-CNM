@@ -1,5 +1,6 @@
 import './component/header.js'
 import './component/footer.js'
+import './component/avt-text.js'
 import './screen/home.js'
 import './screen/countries.js'
 import './screen/detail.js'
