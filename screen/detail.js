@@ -1,3 +1,5 @@
+import {redirect} from '../index.js'
+
 class detailScreen extends HTMLElement{
     constructor(){
         super()

@@ -1,3 +1,5 @@
+import {redirect} from '../index.js'
+
 class genresScreen extends HTMLElement{
     constructor(){
         super()

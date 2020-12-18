@@ -1,3 +1,5 @@
+import {redirect} from '../index.js'
+
 class watchScreen extends HTMLElement{
     constructor(){
         super()
