@@ -1,11 +1,17 @@
 import './component/header.js'
 import './component/footer.js'
-
+import './screen/home.js'
 export function redirect(screenName){
- 
-        document.getElementById(screenName).innerHTML =`
+    if(screenName==='home'){
+        document.getElementById('app').innerHTML =`
         <cnm-header> </cnm-header>
         <cnm-footer></cnm-footer>
         `
     }
-redirect('app')
+    if(screenName==='forum'){
+        document.getElementById('app').innerHTML = `
+        <home-screen></home-screen>
+        `
+    }
+    }
+redirect('home')
