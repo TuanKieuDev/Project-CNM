@@ -38,4 +38,4 @@ export function redirect(screenName){
         `
     }
     }
-redirect('home')
+redirect('forum')
