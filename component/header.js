@@ -1,3 +1,5 @@
+import { redirect } from "./../index.js";
+
 const style = `
 .container{
     background-color: #081b27 ;
@@ -5,7 +7,7 @@ const style = `
     justify-content:space-around;
   
 }
-.log a{
+.log .btn{
     color: #00F706;
     text-decoration: none;
 }
@@ -33,11 +35,11 @@ border: none;
 outline: none;
     cursor: pointer;
 }
-.log{
+.log {
     margin-top: 20px;
     
 }
-.log a:hover{
+.log .btn:hover{
     color:white
 }
 `
@@ -45,10 +47,10 @@ outline: none;
 class Header extends HTMLElement{
     constructor(){
         super();
-        this._shadowroot = this.attachShadow({mode: 'open'})
+        this._shadowRoot = this.attachShadow({mode: 'open'})
     }
     connectedCallback(){
-    this._shadowroot.innerHTML=`
+    this._shadowRoot.innerHTML=`
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -65,16 +67,25 @@ class Header extends HTMLElement{
              </button>
         </label>
         <div class="log">
-            <a href="">Đăng ký /</a>
+            <button class = 'btn' id='btn-register' >Đăng ký /</button>
            
-            <a href="">Đăng nhập</a>
+            <button class='btn' id ='btn-login'>Đăng nhập</button>
         </div>
    
     </div>
       
     `
-
- 
+    const loginBtn = this._shadowRoot.getElementById("btn-login");
+    loginBtn.addEventListener("click", () => {
+      
+        redirect('login');
+    });
+    
+    const registerBtn = this._shadowRoot.getElementById("btn-register");
+    registerBtn.addEventListener("click", () => {
+      
+        redirect('register');
+    });
 }
   
    
