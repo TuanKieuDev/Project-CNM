@@ -26,11 +26,12 @@ class forumScreen extends HTMLElement{
         <div class = "forum-container">
         <cnm-header></cnm-header>
         <div class="main">
-        <img class="banner" src="../images/banner-qc.jpg" width="100px">
+        <img class="banner" src="../images/banner-qc.jpg" width="100px" height="100%">
         <div class="forum-main">
             <avt-text></avt-text>
+            <list-text></list-text>
         </div>
-        <img class="banner" src="../images/banner-qc.jpg" width="100px">
+        <img class="banner" src="../images/banner-qc.jpg" width="100px" height="100%">
         </div>
         <cnm-footer></cnm-footer>
         </div>

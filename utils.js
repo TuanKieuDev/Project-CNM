@@ -31,10 +31,16 @@ export function getDataFromDoc(doc) {
     return number<10 ? '0' +  number : number;
   }
 
-  export function uploadFileToStorage(file) {
+  export async function uploadFileToStorage(file) {
     // tao duong dan den file day
     const fileName = file.name
     const filePath = `file/${fileName}`
     const ref = firebase.storage().ref().child(filePath)
-    ref.put(file)
+    await ref.put(file)
+    console.log(getFileUrl(ref));
+    return getFileUrl(ref)
+  }
+
+  function getFileUrl(fileRef) {
+    return `https://firebasestorage.googleapis.com/v0/b/${fileRef.bucket}/o/${encodeURIComponent(fileRef.fullPath)}?alt=media`
   }

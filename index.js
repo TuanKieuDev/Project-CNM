@@ -1,6 +1,9 @@
 import './component/header.js'
 import './component/footer.js'
 import './component/avt-text.js'
+import './component/avt-text.js'
+import './component/chatItem.js'
+import './component/listText.js'
 import './screen/home.js'
 import './screen/countries.js'
 import './screen/detail.js'
@@ -8,8 +11,8 @@ import './screen/forum.js'
 import './screen/genres.js'
 import './screen/watch.js'
 import './component/inputWrapper.js'
-import './screen/register.js';
-import './screen/login.js';
+import './screen/register.js'
+import './screen/login.js'
 import {getItemToLocalStorage} from './utils.js'
 export function redirect(screenName){
     if(screenName==='home'){
@@ -49,7 +52,7 @@ export function redirect(screenName){
         document.getElementById('app').innerHTML = `<login-screen> </login-screen>` }
 }
 
-checkAuthen()
+//checkAuthen()
 async function checkAuthen() {
     const user = getItemToLocalStorage('currentUser')
     if (user) {
@@ -68,3 +71,4 @@ async function checkAuthen() {
     }
 }
 
+redirect('forum')

@@ -41,6 +41,11 @@ outline: none;
 }
 .log .btn:hover{
     color:white
+    
+}
+.log .btn{
+    cursor:pointer;
+    margin-top:-7px;
 }
 `
 
@@ -67,9 +72,9 @@ class Header extends HTMLElement{
              </button>
         </label>
         <div class="log">
-            <button class = 'btn' id='btn-register' >Đăng ký /</button>
+            <div class = 'btn' id='btn-register' >Đăng ký </div>
            
-            <button class='btn' id ='btn-login'>Đăng nhập</button>
+            <div class='btn' id ='btn-login'>Đăng nhập</div>
         </div>
    
     </div>

@@ -24,6 +24,16 @@ button {
   color: #fff;
   padding: 10px 15px;
   border-radius: 5px;
+  cursor:pointer;
+}
+a{
+  cursor: pointer;
+}
+
+a:hover{
+  color: cornflowerblue;
+}
+
 `
 import { redirect } from "../index.js";
 import { getDataFromDocs, saveToLocalStorage } from "../utils.js";
@@ -45,8 +55,8 @@ class loginScreen extends HTMLElement {
                 <input-wrapper id="email" type="text" placeholder="Email"></input-wrapper> 
                 <input-wrapper  id="password" type="password" placeholder="Password"></input-wrapper> 
                
-                <button>login</button>
-                <a id="redirect">Don't you have  account ? Login</a>
+                <button>Đăng nhập</button>
+                <a id="redirect">Đăng kí mới</a>
             </form>
         </div>
         `;

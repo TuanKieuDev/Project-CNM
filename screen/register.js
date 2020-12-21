@@ -22,7 +22,17 @@ button {
   color: #fff;
   padding: 10px 15px;
   border-radius: 5px;
-`;
+  cursor: pointer;
+}
+
+a{
+  cursor:pointer;
+}
+a:hover{
+  color: cornflowerblue;
+}
+`
+
 import { redirect } from "../index.js";
 
 class RegisterScreen extends HTMLElement {
@@ -45,7 +55,7 @@ class RegisterScreen extends HTMLElement {
                 <input-wrapper  id="password" type="password" placeholder="Password"></input-wrapper> 
                 <input-wrapper  id="confrim-passwrod" type="password" placeholder="Confirm password"></input-wrapper> 
                 <button>Đăng kí</button>
-                <a id="redirect">Already have an account ? Login</a>
+                <a id="redirect">Đã có tài khoản? Đăng nhập</a>
             </form>
         </div>
         `
