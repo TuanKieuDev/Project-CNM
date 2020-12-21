@@ -32,7 +32,7 @@ class avaText extends HTMLElement{
         this._shadowroot.innerHTML=`
         <style>${style}</style>
         <form id = "create-post">
-            <textarea name="content" type="textarea" rows="2" id="content"></textarea>
+            <textarea name="content" type="textarea" rows="7" id="content"></textarea>
             <input type="file" name="file">
             <button id="post">Post</button>
         </form>
@@ -73,7 +73,7 @@ class avaText extends HTMLElement{
         const dataUpdate = {
             files: firebase.firestore.FieldValue.arrayUnion(url)
         }
-        firebase.firestore().collection('stories').doc(id).update(dataUpdate)
+        firebase.firestore().collection('posts').doc(id).update(dataUpdate)
 
  
 }

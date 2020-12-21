@@ -37,7 +37,7 @@ export function getDataFromDoc(doc) {
     const filePath = `file/${fileName}`
     const ref = firebase.storage().ref().child(filePath)
     await ref.put(file)
-    console.log(getFileUrl(ref));
+    console.log(getFileUrl(ref))
     return getFileUrl(ref)
   }
 

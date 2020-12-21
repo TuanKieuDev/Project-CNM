@@ -3,10 +3,12 @@ const style = `
 
 
 .forum-main {
-    text-align: center;
+   
     width: -webkit-fill-available;
     border: 1px solid #363636;
     margin: 2% 10%;
+    height:1000px;
+    overflow:scroll;
 }
 .main{
     display:flex;
