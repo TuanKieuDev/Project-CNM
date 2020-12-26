@@ -9,6 +9,8 @@ class homeScreen extends HTMLElement{
         this._shadowRoot.innerHTML= `
         <div class = "main-container">
         <cnm-header></cnm-header>
+        <navbar-cnm></navbar-cnm>
+        <slides-cnm></slides-cnm>
         <cnm-footer></cnm-footer>
         </div>
         `

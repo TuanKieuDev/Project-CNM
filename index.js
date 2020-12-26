@@ -14,6 +14,8 @@ import './screen/watch.js'
 import './component/inputWrapper.js'
 import './screen/register.js'
 import './screen/login.js'
+import './component/navbar.js'
+import './component/slides.js'
 import {getItemToLocalStorage} from './utils.js'
 export function redirect(screenName){
     if(screenName==='home'){
@@ -72,4 +74,4 @@ async function checkAuthen() {
     }
 }
 
-redirect('watch')
+redirect('home')
