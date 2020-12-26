@@ -22,6 +22,7 @@ class ListText extends HTMLElement{
         </div>
         `
     }
+    
     listenCollectionChange(){
         let firstRun = true;
         firebase.firestore().collection('posts').onSnapshot((snapShot) =>{

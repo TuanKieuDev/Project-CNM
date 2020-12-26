@@ -9,13 +9,16 @@ const style = `
 }
 .chat-item{
     border: 1px solid #dbdbdb;
-    padding: 20px;
+    padding: 5px;
     border-radius: 10px;
     width: 60%;
     margin: auto;
     margin-top:20px;
     font-size:16px;
-    
+    overflow-wrap: break-word;
+}
+.chat-item .author-name{
+    color: blue;
 }
 `
 import {convertDate} from "../utils.js"

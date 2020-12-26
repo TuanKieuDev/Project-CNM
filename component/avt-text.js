@@ -19,9 +19,38 @@ const style =`
     background-color: aqua;
     padding: 10px 15px;
     border-radius: 5px;
+    cursor:pointer;
 }
 
+// .inputfile {
+// 	width: 0.1px;
+// 	height: 0.1px;
+// 	opacity: 0;
+// 	overflow: hidden;
+// 	position: absolute;
+// 	z-index: -1;
+// }
 
+// .inputfile + label {
+//     font-size: 1.25em;
+//     font-weight: 700;
+//     color: white;
+//     background-color: black;
+//     display: inline-block;
+//     cursor: pointer;
+//     border-radius: 10px;
+//     padding: 5px 10px;
+// }
+
+// .inputfile:focus + label,
+// .inputfile + label:hover {
+//     background-color: red;
+// }
+@media only screen and (max-width: 600px) {
+    #file {
+        display:none;
+    }
+  }
 `
 class avaText extends HTMLElement{
     constructor(){
@@ -32,10 +61,10 @@ class avaText extends HTMLElement{
         this._shadowroot.innerHTML=`
         <style>${style}</style>
         <form id = "create-post">
-            <textarea name="content" type="textarea" rows="7" id="content"></textarea>
-            <input type="file" name="file">
+            <textarea name="content" type="textarea" rows="6" id="content"></textarea>
             <button id="post">Post</button>
         </form>
+    
         `
         const postForm = this._shadowroot.getElementById("create-post")
         const postButton = this._shadowroot.getElementById("post")
@@ -68,16 +97,22 @@ class avaText extends HTMLElement{
           //console.log(img);
           postContent.value = ''
         })
+
+
+
+
+        
+
     }
     updateListFile(url,id){
         const dataUpdate = {
             files: firebase.firestore.FieldValue.arrayUnion(url)
         }
         firebase.firestore().collection('posts').doc(id).update(dataUpdate)
+    }
+    
 
- 
-}
-  
+    
    
 }
 window.customElements.define('avt-text',avaText)

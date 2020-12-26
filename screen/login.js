@@ -73,6 +73,7 @@ class loginScreen extends HTMLElement {
         <div class="login-container">
             <form id="login-form">
             <cnm-header></cnm-header>
+            <navbar-cnm></navbar-cnm>
                 <h1> Đăng Nhập</h1>
                <div class="login-form">
                 <input-wrapper id="email" type="text" placeholder="Email"></input-wrapper> 
