@@ -2,7 +2,7 @@ const style= `
     .container{
         display: flex;
         justify-content: space-around;
-        background-color: #081b27;
+        background-color: #0c2738;
         color:#74a8cf;
         width: 100%;
     }
@@ -43,6 +43,13 @@ p{
     margin-top: 4px;
     margin-left: 4px;
 }
+
+@media only screen and (max-width: 600px) {
+    .theloai, .quocgia, .connect {
+        display:none;
+    }
+
+  }
 `
 class Footer extends HTMLElement{
     constructor(){
@@ -61,7 +68,7 @@ class Footer extends HTMLElement{
     <div class="logo-footer">
         <ul>
             <li style="font-size: 25px;">CINEMA.COM</li>
-            <li> <i style="font-size: 60px; margin-left: 30px;
+            <li> <i style="font-size: 60px; margin-left: 33%;
                 margin-top: 8px;" class="fa fa-play-circle" aria-hidden="true"></i> </li>
         </ul>
     </div>

@@ -2,7 +2,7 @@ import { redirect } from "./../index.js";
 
 const style = `
 .container{
-    background-color: #081b27 ;
+    background-color: #0c2738 ;
     display: flex;
     justify-content:space-around;
   
@@ -47,6 +47,25 @@ outline: none;
     cursor:pointer;
     margin-top:-7px;
 }
+
+
+
+@media only screen and (max-width: 600px) {
+    .logo {
+        display:none;
+    }
+    #search button{
+        display: none;
+    }
+    .container{
+        display:block;
+    }
+    .search-text{
+        width:96%;
+    }
+    
+  }
+
 `
 
 class Header extends HTMLElement{
@@ -71,6 +90,8 @@ class Header extends HTMLElement{
                  <i class="fa fa-search" aria-hidden="true"></i>
              </button>
         </label>
+        
+
         <div class="log">
             <div class = 'btn' id='btn-register' >Đăng ký </div>
            

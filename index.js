@@ -4,6 +4,7 @@ import './component/avt-text.js'
 import './component/avt-text.js'
 import './component/chatItem.js'
 import './component/listText.js'
+//import './component/screen-movie.js'
 import './screen/home.js'
 import './screen/countries.js'
 import './screen/detail.js'
@@ -71,4 +72,4 @@ async function checkAuthen() {
     }
 }
 
-redirect('forum')
+redirect('watch')

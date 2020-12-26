@@ -35,6 +35,21 @@ a:hover{
 
 import { redirect } from "../index.js";
 
+function IsInvalidEmail(the_email) {
+  let at = the_email.indexOf("@");
+  let dot = the_email.lastIndexOf(".");
+  let space = the_email.indexOf(" ");
+  
+ if ((at != -1) && //có ký tự @
+  (at != 0) && //ký tự @ không nằm ở vị trí đầu
+  (dot != -1) && //có ký tự .
+  (dot > at + 1) && (dot < the_email.length - 1) //phải có ký tự nằm giữa @ và . cuối cùng
+  &&
+  (space == -1)) //không có khoẳng trắng 
+  return true;
+   else return false;
+  }
+
 class RegisterScreen extends HTMLElement {
   constructor() {
     super();
@@ -95,6 +110,7 @@ class RegisterScreen extends HTMLElement {
 
         this.setError("confrim-passwrod", "Please input confrim password");
       }
+
       if (!isValid) {
         return;
       }
@@ -109,7 +125,14 @@ class RegisterScreen extends HTMLElement {
       const check = await this.checkEmailExist(email);
       if (check) {
         alert("Email đã được đăng ký");
-      } else {
+      } 
+      else if(!(IsInvalidEmail(email))){
+        alert("Please input the email as follow: abc@xyz.com")
+      }
+      else if(password.length<6){
+        alert("Pleasr input your password > 6 characters")
+      }
+      else {
         firebase.firestore().collection("users").add(user);
         alert("Đăng kí thành công");
         redirect("login");
@@ -132,5 +155,8 @@ class RegisterScreen extends HTMLElement {
       .get();
     return !res.empty;
   }
+
+  
 }
+
 window.customElements.define("register-screen", RegisterScreen);
