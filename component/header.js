@@ -1,4 +1,4 @@
-import { redirect } from "./../index.js";
+
 
 const style = `
 .container{
@@ -83,13 +83,13 @@ class Header extends HTMLElement{
     const loginBtn = this._shadowRoot.getElementById("btn-login");
     loginBtn.addEventListener("click", () => {
       
-        redirect('login');
+        router.navigate('login');
     });
     
     const registerBtn = this._shadowRoot.getElementById("btn-register");
     registerBtn.addEventListener("click", () => {
       
-        redirect('register');
+        router.navigate('register');
     });
 }
   

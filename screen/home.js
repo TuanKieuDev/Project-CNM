@@ -1,4 +1,4 @@
-import {redirect} from '../index.js'
+
 class homeScreen extends HTMLElement{
 
     constructor(){

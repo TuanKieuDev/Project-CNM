@@ -1,16 +1,15 @@
-
 const style = `
 .login-container {
   width: 100vw;
   height: 100vh;
-  background: url('https://gamek.mediacdn.vn/2017/photo-0-1503967106503.jpg');
+  
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   justify-content: flex-end;
 }
 #login-form{
-  width: 30%;
+  width: 100%;
   background: #fff;
   height: 100vh;
   padding: 0px 20px;
@@ -20,12 +19,24 @@ h1{
   color: #333;
 }
 button {
-  background: #1565C0;
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 5px;
+  display: block;
+  width: 12%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #4a4a4a;
+  background: #fdd835;
+  border-color: #fdd835;
+  margin:auto;
+  border-style:none;
+  border-radius:5px;
   cursor:pointer;
+  margin-bottom:10px;
 }
+button:hover{
+  background-color:red;
+  color:white;
+}
+
 a{
   cursor: pointer;
 }
@@ -33,9 +44,20 @@ a{
 a:hover{
   color: cornflowerblue;
 }
+#login-form {
+  width: 100%;
+  background: #fff;
+  height: 100vh;
+  padding: 0px 20px;
+}
+.login-form{
+  width:50%;
+  margin:auto;
+}
 
-`
-import { redirect } from "../index.js";
+
+`;
+
 import { getDataFromDocs, saveToLocalStorage } from "../utils.js";
 class loginScreen extends HTMLElement {
   constructor() {
@@ -50,13 +72,19 @@ class loginScreen extends HTMLElement {
         </style>
         <div class="login-container">
             <form id="login-form">
+            <cnm-header></cnm-header>
                 <h1> Đăng Nhập</h1>
-               
+               <div class="login-form">
                 <input-wrapper id="email" type="text" placeholder="Email"></input-wrapper> 
                 <input-wrapper  id="password" type="password" placeholder="Password"></input-wrapper> 
-               
-                <button>Đăng nhập</button>
-                <a id="redirect">Đăng kí mới</a>
+                <button>Đăng nhập</button> 
+                <button id="redirect">Đăng kí</button>
+                </div>
+                
+                
+     
+                
+                <cnm-footer></cnm-footer>
             </form>
         </div>
         `;
@@ -94,20 +122,18 @@ class loginScreen extends HTMLElement {
       if (user.empty) {
         alert("sai email/ password");
       } else {
-        saveToLocalStorage('currentUser', getDataFromDocs(user)[0])
-        redirect('home')
-      
-        
+        saveToLocalStorage("currentUser", getDataFromDocs(user)[0]);
+        router.navigate("home");
       }
     });
-    this._shadowRoot.getElementById("redirect").addEventListener("click", () => {
-      redirect("register");
-    });
+    this._shadowRoot
+      .getElementById("redirect")
+      .addEventListener("click", () => {
+        router.navigate("register");
+      });
   }
   setError(id, message) {
     this._shadowRoot.getElementById(id).setAttribute("error", message);
   }
- 
-  
 }
 window.customElements.define("login-screen", loginScreen);

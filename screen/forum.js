@@ -1,4 +1,4 @@
-import {redirect} from '../index.js'
+
 const style = `
 
 

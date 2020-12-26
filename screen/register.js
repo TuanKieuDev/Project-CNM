@@ -33,7 +33,7 @@ a:hover{
 }
 `
 
-import { redirect } from "../index.js";
+
 
 class RegisterScreen extends HTMLElement {
   constructor() {
@@ -112,13 +112,13 @@ class RegisterScreen extends HTMLElement {
       } else {
         firebase.firestore().collection("users").add(user);
         alert("Đăng kí thành công");
-        redirect("login");
+        router.navigate("login");
       }
     });
     this._shadowRoot
       .getElementById("redirect")
       .addEventListener("click", () => {
-        redirect("login");
+        router.navigate("login");
       });
   }
   setError(id, message) {
