@@ -51,7 +51,7 @@ p{
       cursor: pointer;
   
 }
-p :hover{
+p:hover{
   background-color: rgb(30, 247, 247)
 }
 .tab-item:hover .theloai{
