@@ -1,3 +1,4 @@
+import {getData} from '../data.js'
 export function getDataFromDoc(doc) {
     const data = doc.data()
     data.id = doc.id
@@ -44,3 +45,11 @@ export function getDataFromDoc(doc) {
   function getFileUrl(fileRef) {
     return `https://firebasestorage.googleapis.com/v0/b/${fileRef.bucket}/o/${encodeURIComponent(fileRef.fullPath)}?alt=media`
   }
+ 
+
+
+ 
+// 
+export const getResult = (result)=>{
+  
+}

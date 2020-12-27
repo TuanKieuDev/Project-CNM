@@ -10,6 +10,8 @@ const style =`
             max-width: 500px;
             position: relative;
             margin: auto;
+            margin-top: 2%;
+            margin-left: 10%;
           }
           /* Ẩn các slider */
           .mySlides {
@@ -62,6 +64,9 @@ const style =`
           .slideshow-container{
               z-index:0
           }
+          .dots{
+            margin-top:-35px
+          }
         
 `
 class slide extends HTMLElement{
@@ -79,23 +84,20 @@ class slide extends HTMLElement{
      <style>${style}</style>
      <div class="slideshow-container">
      <div class="mySlides fade">
-       <img src="https://freetuts.net/upload/tut_post/images/2017/07/30/964/slide-1.jpg" style="width:100%">
-       <div class="text">Nội dung caption của slide đầu tiên!</div>
+       <img src="https://www.cgv.vn/media/banner/cache/1/b58515f018eb873dafa430b6f9ae0c1e/p/o/poster-ddc-_980x448_.jpg" style="width:200%">
      </div>
 
      <div class="mySlides fade">
-       <img src="https://freetuts.net/upload/tut_post/images/2017/07/30/964/slide-2.jpg" style="width:100%">
-       <div class="text">Nội dung caption của slide thứ 2!</div>
+       <img src="https://www.cgv.vn/media/banner/cache/1/b58515f018eb873dafa430b6f9ae0c1e/w/w/ww84_ctkc_980x448.jpg" style="width:200%">
      </div>
 
      <div class="mySlides fade">
-       <img src="https://freetuts.net/upload/tut_post/images/2017/07/30/964/slide-3.jpg" style="width:100%">
-       <div class="text">Nội dung caption của slide thứ 3!</div>
+       <img src="https://www.cgv.vn/media/banner/cache/1/b58515f018eb873dafa430b6f9ae0c1e/9/8/980x448-min_1_.png" style="width:200%">
      </div>
    </div>
    <br>
 
-   <div style="text-align:center">
+   <div style="text-align:center" class='dots'>
      <span class="dot" id='dot1' ></span> 
      <span class="dot" id='dot2' ></span> 
      <span class="dot" id='dot3' ></span> 
@@ -132,7 +134,7 @@ var slideIndex;
 showSlides(slideIndex = 0);
 
 
-const currentSlide =(n) =>{
+const currentSlide = (n) =>{
 showSlides(slideIndex = n);
 }
 this._shadowRoot.getElementById('dot1').addEventListener('click',currentSlide(0))

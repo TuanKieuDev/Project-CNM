@@ -16,6 +16,14 @@ import './screen/register.js'
 import './screen/login.js'
 import './component/navbar.js'
 import './component/slides.js'
+import './component/phimhot.js'
+import './component/phimmoi.js'
+import './component/phimnoibat.js'
+import './component/search.js'
+import './data.js'
+import './screen/search-screen.js'
+import './component/genres.js'
+import './screen/genres.js'
 import {getItemToLocalStorage} from './utils.js'
 export function redirect(screenName){
     if(screenName==='home'){
@@ -53,10 +61,14 @@ export function redirect(screenName){
 
     } if (screenName === 'login') {        
         document.getElementById('app').innerHTML = `<login-screen> </login-screen>` }
-}
 
+    if (screenName === 'search') {        
+        document.getElementById('app').innerHTML = `<search-screen> </search-screen>` }
+
+    }
 //checkAuthen()
 async function checkAuthen() {
+    console.log(Headers.resultSearch)
     const user = getItemToLocalStorage('currentUser')
     if (user) {
         const res = await firebase
