@@ -91,7 +91,7 @@ class RegisterScreen extends HTMLElement {
             <cnm-header></cnm-header>
             <navbar-cnm></navbar-cnm>
                 <h1> Đăng Kí Tài Khoản </h1>
-                <div class="register-form"
+                <div class="register-form">
                 <input-wrapper id="first-name" type="text" placeholder="First Name"></input-wrapper>
                 <input-wrapper id="last-name" type="text" placeholder="Last Name"></input-wrapper> 
                 <input-wrapper id="email" type="text" placeholder="Email"></input-wrapper> 
