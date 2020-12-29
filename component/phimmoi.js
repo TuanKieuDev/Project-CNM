@@ -44,45 +44,23 @@ class Phimmoi extends HTMLElement{
     connectedCallback(){
   
        
-   
-    this._shadowRoot.innerHTML=`
+        let list = this.database.map((item)=>{
+            if(item.sta=='new')
+            return `
+             <div class='new'>
+             <img src="${item.img}">
+             <h4>${item.name}</h4>
+             </div> 
+             `
+        })
 
-
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <style>${style}</style>
-   <div class='container'>
-   <h3>Phim Mới</h3>
-   <div class='phimmoi'>
-   <div class="moi">
-   <img src="${this.database[3].img}">
-   <div class="content-name"><h4>${this.database[3].name}</h4></div>
-   </div>
-   <div class="moi">
-   <img src="${this.database[14].img}">
-   <div class="content-name"><h4>${this.database[14].name}</h4></div>
-   </div>
-   <div class="moi">
-   <img src="${this.database[22].img}">
-   <div class="content-name"><h4>${this.database[22].name}</h4></div>
-   </div>
-   <div class="moi">
-   <img src="${this.database[8].img}">
-   <div class="content-name"><h4>${this.database[8].name}</h4></div>
-   </div>
-   <div class="moi">
-   <img src="${this.database[11].img}">
-   <div class="content-name"><h4>${this.database[11].name}</h4></div>
-   </div>
-   <div class="moi">
-   <img src="${this.database[30].img}">
-   <div class="content-name"><h4>${this.database[30].name}</h4></div>
-   </div>
-   </div>
-   </div>
-    `
+        this._shadowRoot.innerHTML=`
+        <style>${style}</style>
+        <div class='container'>
+        <h3>Phim Mới</h3>
+        <div class='phimmoi'> ${list} </div>
+        </div>
+        `
     
     
 }

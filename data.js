@@ -10,7 +10,7 @@
             year: 2020,
             video:'https://www.youtube.com/embed/VT29VvmzPhI',
             view:0,
-            sta:'hot'
+            sta:'hot',
         },
         {
             name : 'JOKER',
@@ -22,6 +22,8 @@
             year: 2019,
             video: "https://www.youtube.com/embed/0rG8Gs3kp1k",
             view:0,
+            sta:'new'
+
         },
         {
             name : 'Fast And Furious',
@@ -45,6 +47,7 @@
             year:2017,
             video:"https://www.youtube.com/embed/AxSnQ1XK2e4",
             view:0,
+            sta:'noi'
         },
         {
             name : 'Hai Phượng',
@@ -78,6 +81,7 @@
             year: 2018,
             video: "https://www.youtube.com/embed/XiscvtyTIy4",
             view:0,
+            sta:'noi'
         },
         {
             name : 'SKYSCAPER',
@@ -100,6 +104,7 @@
             year:2019 ,
             video: '"https://www.youtube.com/embed/KAnaVlpVq_g"',
             view:0,
+            sta:'new'
         }, {
             name : 'Ant-Man and the Wasp',
             rate: 0,
@@ -173,6 +178,7 @@
             year:2019,
             video:"https://www.youtube.com/embed/FYVIjbPtvj4",
             view:0,
+            sta:'new'
         },
         {
             name : 'Skylin3s',
@@ -184,6 +190,7 @@
             year:2018,
             video:"https://www.youtube.com/embed/CP6Wn1VkUeU",
             view:0,
+            sta:'noi'
         },
         {
             name : 'Xứ Sở Phép Thuật',
@@ -191,6 +198,7 @@
             description: 'Với Alice Through The Looking Glass, cô bé Alice (Mia Wasikowska) sẽ trở lại Wonderland cũng như khám phá ra rằng, thế giới thần tiên này hiện đang gặp rất nhiều vấn đề khó giải quyết. Nhân vật Mad Hatter (Johnny Depp) bỗng trở nên độc ác hơn. Alice là người duy nhất có thể khiến mọi chuyện trở về như lúc ban đầu trước khi quá muộn.',
             img:'images/vien-tuong/9.jpg',
             genres:'Viễn Tưởng',
+            genresSlug:'vien-tuong',
             year: 2018,
             video: "https://www.youtube.com/embed/eciNmEv-_vo",
             sta:'hot',
@@ -217,6 +225,7 @@
             year:2019,
             video: "https://www.youtube.com/embed/wikKLnJmOZ0",
             view:0,
+            sta:'noi'
         }, 
         {
             name : 'Đảo kinh hoàng',
@@ -228,6 +237,7 @@
             year:2020,
             video: "https://www.youtube.com/embed/AtByq0Fbv9w",
             view:0,
+            sta:'new'
         }, 
         {
             name : 'Ma Gương 2',
@@ -239,6 +249,7 @@
             year:2017,
             video: "https://www.youtube.com/embed/-Qe_prWQdBE",
             view:0,
+            sta:'noi'
         }, 
         {
             name : 'Nga Quỷ',
@@ -261,6 +272,7 @@
             year:2018,
             video: "https://www.youtube.com/embed/jlFkMBPGp5c",
             view:0,
+            sta:'noi'
         },
          {
             name : 'Thang Máy',
@@ -294,6 +306,7 @@
             year:2020,
             video: "https://www.youtube.com/embed/Dk1456TFMm4",
             view:0,
+            sta:'new'
         },
         {
             name : 'Aladin',
@@ -339,6 +352,7 @@
             year:2020,
             video: "https://www.youtube.com/embed/L4mKY2PcyfY",
             view:0,
+            sta:'noi'
         },
         {
             name : 'ONWARD',
@@ -350,6 +364,7 @@
             year:2019,
             video: "https://www.youtube.com/embed/kA60CpZY4JI",
             view:0,
+            sta:'new'
         },
         {
             name : 'Scuby Doo',
