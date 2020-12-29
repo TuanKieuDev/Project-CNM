@@ -5,6 +5,8 @@ const style= `
         background-color: #0c2738;
         color:#74a8cf;
         width: 100%;
+        position: absolute;
+        bottom: 0;
     }
     li i{
         color: orange;

@@ -1,32 +1,42 @@
-import './component/header.js'
-import './component/footer.js'
-import './component/avt-text.js'
-import './component/avt-text.js'
-import './component/chatItem.js'
-import './component/listText.js'
-//import './component/screen-movie.js'
-import './screen/home.js'
-import './screen/countries.js'
-import './screen/detail.js'
-import './screen/forum.js'
-import './screen/genres.js'
-import './screen/watch.js'
-import './component/inputWrapper.js'
-import './screen/register.js'
-import './screen/login.js'
-import './navigo.js'
-import './component/navbar.js'
-import './component/slides.js'
-import './component/phimhot.js'
-import './component/phimmoi.js'
-import './component/phimnoibat.js'
-import './component/search.js'
-import './data.js'
-import './screen/search-screen.js'
-import './component/genres.js'
-import './screen/genres.js'
-import {getItemToLocalStorage} from './utils.js'
-export function redirect(screenName){
+import { getItemToLocalStorage} from './utils.js'
+var root = null;
+var useHash = true; // Defaults to: false
+var hash = '#!'; // Defaults to: '#'
+var router = new Navigo(root, useHash, hash);
+
+router
+.on({
+    'login': function () {
+      redirect('login')
+    },
+    'register': function () {
+     redirect('register')
+    },
+    'forum': function () {
+        redirect('forum')
+     },
+    'detail': function () {
+     redirect('detail')
+     },
+     'genres': function () {
+        redirect('genres')
+       },
+     'countries': function () {
+        redirect('countries')
+       },
+    'home':async function () { 
+        const check = await checkAuthen ()
+        if ( check ) {
+            redirect('home')
+        }
+      },
+    '*': function () {
+      router.navigate('login')
+    }
+  })
+
+  .resolve();
+  export function redirect(screenName){
     if(screenName==='home'){
         document.getElementById('app').innerHTML =`
         <home-screen></home-screen>
@@ -62,14 +72,9 @@ export function redirect(screenName){
 
     } if (screenName === 'login') {        
         document.getElementById('app').innerHTML = `<login-screen> </login-screen>` }
+}
 
-    if (screenName === 'search') {        
-        document.getElementById('app').innerHTML = `<search-screen> </search-screen>` }
-
-    }
-//checkAuthen()
 async function checkAuthen() {
-    console.log(Headers.resultSearch)
     const user = getItemToLocalStorage('currentUser')
     if (user) {
         const res = await firebase
@@ -86,5 +91,4 @@ async function checkAuthen() {
         redirect('login')
     }
 }
-
-redirect('home')
+window.router = router
