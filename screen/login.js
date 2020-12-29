@@ -81,10 +81,7 @@ class loginScreen extends HTMLElement {
                 <button>Đăng nhập</button> 
                 <button id="redirect">Đăng kí</button>
                 </div>
-                
-                
-     
-                
+              
                 <cnm-footer></cnm-footer>
             </form>
         </div>
