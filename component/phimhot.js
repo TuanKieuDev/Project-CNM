@@ -40,17 +40,15 @@ class Phimhot extends HTMLElement{
     }
     connectedCallback(){
     
-    const getDataBase= async()=> {
+    const getDataBase = async()=> {
      const dataBase = await firebase.firestore().collection('dataBase').where("sta","==","hot").get();;
      let result = getDataFromDocs(dataBase);
      console.log(result);
     //  return getDataFrlengthomDocs(dataBase)
     let list = result.map((item)=>{
         return `
-
         <div class='hot'>
-        <img src="${item.img}">
-        <h4>${item.name}</h4>
+        <phim-comnponent img=${item.img} name = ${item.name} id = ${item.id}></phim-comnponent>
         </div>
         `
     })

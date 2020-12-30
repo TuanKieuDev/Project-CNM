@@ -62,6 +62,11 @@ router
         <genres-screen></genres-screen>
         `
     }
+    if(screenName==='view'){
+        document.getElementById('app').innerHTML = `
+        <detail-screen></detail-screen-screen>
+        `
+    }
     if(screenName==='watch'){
         document.getElementById('app').innerHTML = `
         <watch-screen></watch-screen>

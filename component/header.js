@@ -70,7 +70,7 @@ outline: none;
 `
 import {getDataFromDoc,getDataFromDocs} from '../utils.js'
 
-class Header extends HTMLElement{
+class Headers extends HTMLElement{
     static resultSearch = [];
     static searchValue = [];
     constructor(){
@@ -118,23 +118,14 @@ class Header extends HTMLElement{
     });
     
 
-        const search= async()=> {
-            const dataBase = await firebase.firestore().collection('dataBase').get();
-            let resultdata = getDataFromDocs(dataBase);
-        let searchPhim = this._shadowRoot.querySelectorAll('.search-text')[0];
-        let searchs = searchPhim.value;
-        let result =resultdata.filter((v)=> {
-            return v.name.toLowerCase().includes(searchs.toLowerCase().trim())
-        })
-        Headers.resultSearch= result;
-        Headers.searchValue = searchs;
-        }
-    
+        
     this._shadowRoot.querySelector('#search').addEventListener('submit',(e)=>{
      e.preventDefault();
-     search()
-     redirect('search')
+     let searcht= this._shadowRoot.querySelectorAll('.search-text')[0];
+     let searchs = searcht.value;
+     localStorage.setItem('search-text',searchs)
      alert('k')
+     redirect('search')
     })
 
 
@@ -142,4 +133,4 @@ class Header extends HTMLElement{
   
    
 }
-window.customElements.define('cnm-header',Header)
+window.customElements.define('cnm-header',Headers)

@@ -48,8 +48,8 @@ class Phimmoi extends HTMLElement{
            let list = result.map((item)=>{
                return `
                <div class='moi'>
-               <img src="${item.img}">
-               <h4>${item.name}</h4>
+        <phim-comnponent img=${item.img} name = ${item.name} id = ${item.id}></phim-comnponent>
+               
                </div>
                `
            })

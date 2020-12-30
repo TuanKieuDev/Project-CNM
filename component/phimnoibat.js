@@ -43,8 +43,9 @@ class Phimnoibat extends HTMLElement{
            let list = result.map((item)=>{
                return `
                <div class='noibat'>
-               <img src="${item.img}"> 
-               <h4>${item.name}</h4>
+           <phim-comnponent img=${item.img} name = ${item.name} id = ${item.id}></phim-comnponent>
+               
+
                </div>
                
                

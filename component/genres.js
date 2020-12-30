@@ -18,14 +18,9 @@ class Genres extends HTMLElement{
            this._shadowRoot.innerHTML+=`
         
           <div class="content">
-                <div class="content-img">
-                    <img src="${item.img}" alt=""  width="270px" height="220px" >
-                </div>
-                <div class="content-name">
-                    <h4>
-                    ${item.name}
-                    </h4>
-                </div>
+               
+        <phim-comnponent img=${item.img} name = ${item.name} id = ${item.id}></phim-comnponent>
+
           </div>
           `
            }
