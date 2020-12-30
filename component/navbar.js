@@ -1,3 +1,5 @@
+import { redirect } from "../index.js";
+
 const style =`
 .tab{
   display: flex;
@@ -97,20 +99,20 @@ class Navbar extends HTMLElement{
 			<li class="tab-item" >
                 <span>Thể Loại</span>
                     <div class="theloai">
-                        <p id="hanhdong">Hành Động</p>
-                        <p id="kinhdi">Kinh Dị</p>
-                        <p id="vientuong">Viễn Tưởng</p>
-                        <p id="hoathinh">Hoạt Hình</p>
+                        <p id="hanh-dong">Hành Động</p>
+                        <p id="kinh-di">Kinh Dị</p>
+                        <p id="vien-tuong">Viễn Tưởng</p>
+                        <p id="hoat-hinh">Hoạt Hình</p>
                     </div>
                 
             </li>
 			<li class="tab-item">
 				<span>Quốc Gia</span>
                     <div class="quocgia">
-                        <p id="hanhdong">Phim Việt Nam</p>
-                        <p id="kinhdi">Phim Mỹ</p>
-                        <p id="vientuong">Phim Hàn Quốc</p>
-                        <p id="hoathinh">Phim Trung Quốc</p>
+                        <p id="phimvietnam">Phim Việt Nam</p>
+                        <p id="phimmy">Phim Mỹ</p>
+                        <p id="phimhanquoc">Phim Hàn Quốc</p>
+                        <p id="phimtrungquoc">Phim Trung Quốc</p>
                     </div>
 			</li>
 			<li class='tab-item'>
@@ -129,7 +131,16 @@ class Navbar extends HTMLElement{
     </div>
       
     `
-    
+    // this._shadowRoot.querySelector('hanhdong').addEventListener('click',filter('Hành Động'))
+    this._shadowRoot.querySelector('.theloai').addEventListener('click', (e) => {
+      window.genres = e.target.id
+      console.log(genres);
+      redirect('genres')
+    })
+    this._shadowRoot.querySelector('.quocgia').addEventListener('click',(e)=>{
+      window.genres = e.target.id
+      redirect('genres')
+    })
 }
   
    

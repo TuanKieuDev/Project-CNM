@@ -9,7 +9,9 @@ class genresScreen extends HTMLElement{
         this._shadowRoot.innerHTML= `
         <div class = "genres-container">
         <cnm-header></cnm-header>
-        
+        <navbar-cnm></navbar-cnm>
+        <h4></h4>
+        <genres-cnm> </genres-cnm>
         <cnm-footer></cnm-footer>
         </div>
         `

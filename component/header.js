@@ -1,4 +1,6 @@
-
+import { redirect } from "./../index.js";
+import {getData} from '../data.js'
+import {getResult} from '../utils.js';
 
 const style = `
 .container{
@@ -69,8 +71,12 @@ outline: none;
 `
 
 class Header extends HTMLElement{
+    static resultSearch = [];
+    static searchValue = [];
+    dataBase
     constructor(){
         super();
+        this.dataBase = getData()
         this._shadowRoot = this.attachShadow({mode: 'open'})
     }
     connectedCallback(){
@@ -84,12 +90,12 @@ class Header extends HTMLElement{
         <div class="logo">
             <img src="images/your-logo .png" alt="logo" width="160px" >
         </div>
-        <label id="search">
+        <form id="search">
              <input type="text" class="search-text">
              <button>
                  <i class="fa fa-search" aria-hidden="true"></i>
              </button>
-        </label>
+        </form>
         
 
         <div class="log">
@@ -112,6 +118,22 @@ class Header extends HTMLElement{
       
         router.navigate('register');
     });
+    let search = ()=>{
+        let searchPhim = this._shadowRoot.querySelectorAll('.search-text')[0];
+        let searchs = searchPhim.value;
+        let result = this.dataBase.filter(function(v) {
+            return v.name.toLowerCase().includes(searchs.toLowerCase().trim())
+        })
+        Headers.resultSearch= result;
+        Headers.searchValue = searchs;
+        }
+    
+    this._shadowRoot.querySelector('#search').addEventListener('submit',(e)=>{
+     e.preventDefault();
+     search()
+     redirect('search')
+    })
+
 }
   
    
