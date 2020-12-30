@@ -8,6 +8,8 @@ let dataBase = [
         year: 2020,
         video:'https://www.youtube.com/embed/VT29VvmzPhI',
         view:0,
+        country : 'Mỹ',
+        
     },
     {
         name : 'JOKER',
@@ -18,6 +20,7 @@ let dataBase = [
         year: 2019,
         video: "https://www.youtube.com/embed/0rG8Gs3kp1k",
         view:0,
+        country : 'Mỹ',
     },
     {
         name : 'Fast And Furious',
@@ -28,6 +31,7 @@ let dataBase = [
         year: 2019,
         video: "https://www.youtube.com/embed/kobpH3-6uvU",
         view:0,
+        country : 'Mỹ',
     },
      {
         name : 'Người Nhện',
@@ -38,6 +42,7 @@ let dataBase = [
         year:2017,
         video:"https://www.youtube.com/embed/AxSnQ1XK2e4",
         view:0,
+        country : 'Mỹ',
     },
     {
         name : 'Hai Phượng',
@@ -48,6 +53,7 @@ let dataBase = [
         year:2019,
         video: "https://www.youtube.com/embed/lTnrKA8EQ1M",
         view:0,
+        country : 'Việt Nam',
     },
     {
         name : "MILE 22",
@@ -58,6 +64,7 @@ let dataBase = [
         year: 2019,
         video:"https://www.youtube.com/embed/RkFyqPLXKsw",
         view:0,
+        country : 'Mỹ',
     },
     {
         name : 'Siêu Sát Thủ',
@@ -67,7 +74,8 @@ let dataBase = [
         genres:'Hành Động',
         year: 2018,
         video: "https://www.youtube.com/embed/XiscvtyTIy4",
-        view:0,
+        view:0, 
+        country : 'Hàn Quốc',
     },
     {
         name : 'SKYSCAPER',
@@ -78,6 +86,7 @@ let dataBase = [
         year:2019,
         video: "https://www.youtube.com/embed/H6DVAbHfsLI",
         view:0,
+        country : 'Mỹ',
     },
     {
         name : 'VENOM',
@@ -88,6 +97,7 @@ let dataBase = [
         year:2019 ,
         video: '"https://www.youtube.com/embed/KAnaVlpVq_g"',
         view:0,
+        country : 'Trung Quốc' ,
     }, {
         name : 'Ant-Man and the Wasp',
         rate: 0,
@@ -97,6 +107,7 @@ let dataBase = [
         year:2019,
         video: "https://www.youtube.com/embed/haJzlp3WkUY",
         view:0,
+        country : 'Mỹ ',
     }, {
         name : 'Avatar 2',
         rate: 0,
@@ -106,6 +117,7 @@ let dataBase = [
         year: 2017,
         video: "https://www.youtube.com/embed/qt-eYen2M70",
         view:0,
+        country : 'Việt Nam'
     }, {
         name : 'Đại Dịch Xác Sống',
         rate: 0,
@@ -115,6 +127,7 @@ let dataBase = [
         year: 2018,
         video:"https://www.youtube.com/embed/NzUbgU4s12g",
         view:0,
+        country : 'Hàn Quốc'
     }, {
         name : 'Dr.Strange',
         rate: 0,
@@ -124,6 +137,7 @@ let dataBase = [
         year:2019,
         video:"https://www.youtube.com/embed/PdZa654fRRM",
         view:0,
+        country : 'Mỹ',
     }, {
         name : 'Harry Poster',
         rate: 0,
@@ -133,6 +147,7 @@ let dataBase = [
         year: 2016,
         video:"https://www.youtube.com/embed/I2bW68NHP_w",
         view:0,
+        country : 'Việt Nam',
     },
     {
         name : 'Jumanji',
@@ -143,6 +158,7 @@ let dataBase = [
         year:2019,
         video:"https://www.youtube.com/embed/EjjMj32RCF0",
         view:0,
+        country : 'Mỹ',
     },
     {
         name : 'Thor tận thế Ranarok',
@@ -153,6 +169,7 @@ let dataBase = [
         year:2019,
         video:"https://www.youtube.com/embed/FYVIjbPtvj4",
         view:0,
+        country : 'Hàn Quốc',
     },
     {
         name : 'Skylin3s',
@@ -163,6 +180,9 @@ let dataBase = [
         year:2018,
         video:"https://www.youtube.com/embed/CP6Wn1VkUeU",
         view:0,
+        country : 'Mỹ',
+        
+
     },
     {
         name : 'Xứ Sở Phép Thuật',
@@ -173,6 +193,8 @@ let dataBase = [
         year: 2018,
         video: "https://www.youtube.com/embed/eciNmEv-_vo",
         view:0,
+        country : 'Hàn Quốc',
+
     },
     {
         name : 'Ác Quỷ Rừng Sâu',
@@ -183,6 +205,7 @@ let dataBase = [
         year:2018,
         video: "https://www.youtube.com/embed/p_2TalkgVjk",
         view:0,
+        country : 'Mỹ',
     },
     {
         name : 'Annabelle',
@@ -193,6 +216,7 @@ let dataBase = [
         year:2019,
         video: "https://www.youtube.com/embed/wikKLnJmOZ0",
         view:0,
+        country : 'Việt Nam',
     }, 
     {
         name : 'Đảo kinh hoàng',
@@ -203,6 +227,7 @@ let dataBase = [
         year:2020,
         video: "https://www.youtube.com/embed/AtByq0Fbv9w",
         view:0,
+        country : 'Trung Quốc',
     }, 
     {
         name : 'Ma Gương 2',
@@ -213,6 +238,7 @@ let dataBase = [
         year:2017,
         video: "https://www.youtube.com/embed/-Qe_prWQdBE",
         view:0,
+        country : 'Mỹ',
     }, 
     {
         name : 'Nga Quỷ Tiếng Thét Đồng Hồ Gió',
@@ -223,6 +249,7 @@ let dataBase = [
         year:2016,
         video: "https://www.youtube.com/embed/50smxWE8L9Y",
         view:0,
+        country : 'Hàn Quốc',
     }, 
     {
         name : 'SCARY STORIES TO TELL IN THE DARK',
@@ -233,6 +260,7 @@ let dataBase = [
         year:2018,
         video: "https://www.youtube.com/embed/jlFkMBPGp5c",
         view:0,
+        country : 'Hàn Quốc',
     },
      {
         name : 'Thang Máy',
@@ -243,6 +271,7 @@ let dataBase = [
         year:2019,
         video:"https://www.youtube.com/embed/kbcduHeqMBM",
         view:0,
+        country : 'Mỹ',
     },
      {
         name : 'Thì Nhiệm Xác Sống',
@@ -253,6 +282,7 @@ let dataBase = [
         year:2020,
         video: "https://www.youtube.com/embed/T0CcSIqW1OI" ,
         view:0,
+        country : 'Trung Quốc',
     }, 
     {
         name : 'Trùng Quỷ Đại Dương',
@@ -263,6 +293,7 @@ let dataBase = [
         year:2020,
         video: "https://www.youtube.com/embed/Dk1456TFMm4",
         view:0,
+        country : 'Việt Nam',
     },
     {
         name : 'Aladin',
@@ -273,6 +304,7 @@ let dataBase = [
         year:2019,
         video: "https://www.youtube.com/embed/vPZGL1hXRrI",
         view:0,
+        country : 'Việt Nam'
     },
     {
         name : 'Doramon & Nobita',
@@ -283,6 +315,7 @@ let dataBase = [
         year:2020,
         video: "https://www.youtube.com/embed/uZpLN4g7Qo",
         view:0,
+        country :'Hàn Quốc',
     },
     {
         name : 'Lion King',
@@ -293,6 +326,7 @@ let dataBase = [
         year:2019,
         video: "https://www.youtube.com/embed/eSw_zXYPLiU",
         view:0,
+        country : 'Mỹ',
     },
     {
         name : 'Nhím Sonic',
@@ -303,6 +337,8 @@ let dataBase = [
         year:2020,
         video: "https://www.youtube.com/embed/L4mKY2PcyfY",
         view:0,
+        country : 'Mỹ',
+        
     },
     {
         name : 'ONWARD',
@@ -313,6 +349,8 @@ let dataBase = [
         year:2019,
         video: "https://www.youtube.com/embed/kA60CpZY4JI",
         view:0,
+        country : 'Trung Quốc',
+
     },
     {
         name : 'Scuby Doo',
@@ -323,6 +361,8 @@ let dataBase = [
         year:2019,
         video: "https://www.youtube.com/embed/0RafdzilidM",
         view:0,
+        country : 'Mỹ',
+
     },
     {
         name : 'Soul',
@@ -333,6 +373,8 @@ let dataBase = [
         year:2020,
         video: "https://www.youtube.com/embed/x6uzY81Riyk",
         view:0,
+        country : 'Hàn Quốc',
+
     },
     {
         name : 'The Croods Poster',
@@ -343,6 +385,8 @@ let dataBase = [
         year: 2018,
         video: "https://www.youtube.com/embed/kA60CpZY4JI",
         view:0,
+        country : 'Mỹ',
+
     },
     {
         name : 'Tom & Jerry',
@@ -353,6 +397,8 @@ let dataBase = [
         year: 2019,
         video: "https://www.youtube.com/embed/QEL3nrSxyyw",
         view:0,
+        country : 'Mỹ',
+
     },
    
     
