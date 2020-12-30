@@ -6,7 +6,7 @@ h4{
     color:white
 }
 `
-import {getData} from '../data.js'
+// import {getData} from '../data.js'
 import {getResult} from '../utils.js'
 import {getDataFromDoc,getDataFromDocs} from '../utils.js'
 

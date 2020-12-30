@@ -1,4 +1,4 @@
-import {getData} from '../data.js'
+// import {getData} from '../data.js'
 export function getDataFromDoc(doc) {
     const data = doc.data()
     data.id = doc.id
