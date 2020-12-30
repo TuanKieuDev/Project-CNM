@@ -33,34 +33,37 @@ h4:hover{
     cursor:pointer
 }
 `
-import {getData} from '../data.js'
+import {getDataFromDoc,getDataFromDocs} from '../utils.js'
+
 class Phimmoi extends HTMLElement{
-    database
     constructor(){
         super();
-        this.database = getData()
         this._shadowRoot = this.attachShadow({mode: 'open'})
     }
     connectedCallback(){
-  
-       
-        let list = this.database.map((item)=>{
-            if(item.sta=='new')
-            return `
-             <div class='new'>
-             <img src="${item.img}">
-             <h4>${item.name}</h4>
-             </div> 
-             `
-        })
-
-        this._shadowRoot.innerHTML=`
-        <style>${style}</style>
-        <div class='container'>
-        <h3>Phim Mới</h3>
-        <div class='phimmoi'> ${list} </div>
-        </div>
-        `
+        const getDataBase= async()=> {
+            const dataBase = await firebase.firestore().collection('dataBase').where("sta","==","new").get();;
+            let result = getDataFromDocs(dataBase);
+           //  return getDataFrlengthomDocs(dataBase)
+           let list = result.map((item)=>{
+               return `
+               <div class='moi'>
+               <img src="${item.img}">
+               <h4>${item.name}</h4>
+               </div>
+               `
+           })
+           this._shadowRoot.innerHTML=`
+                   <style>${style}</style>
+                   <div class='container'>
+                   <h3>Phim Mới</h3>
+                   <div class='phimmoi'> ${list} </div>
+                   </div>
+                   `
+           
+       }
+         
+           getDataBase()
     
     
 }

@@ -1,5 +1,6 @@
  export function getData(){
-     return [
+ return 
+      [
         {
             name : 'BLOODSHOT',
             rate : 0 ,
@@ -418,4 +419,4 @@
     
     ]
     
- } 
+ }

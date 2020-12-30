@@ -9,11 +9,11 @@ h4{
 import {getData} from '../data.js'
 import {getResult} from '../utils.js'
 class Search extends HTMLElement{
-    dataBase
     constructor(){
         super()
-        this.dataBase = getData()
+    
         this._shadowRoot = this.attachShadow({mode: 'open'})
+        console.log(Headers.resultSearch);
     }
     connectedCallback(){
         

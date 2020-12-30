@@ -1,16 +1,19 @@
-import {getData} from '../data.js'
+import {getDataFromDoc,getDataFromDocs} from '../utils.js'
 import { redirect } from '../index.js';
 class Genres extends HTMLElement{
-    database
+    
     constructor(){
         super();
-        this.database = getData()
+        
         this._shadowRoot = this.attachShadow({mode: 'open'})
         console.log(genres)
     }
     connectedCallback(){
+        const getDataBase= async()=> {
+            const dataBase = await firebase.firestore().collection('dataBase').get();;
+            let result = getDataFromDocs(dataBase);
       console.log(genres);
-        for (const item of this.database) {
+        for (const item of result) {
            if(item.genresSlug===genres){
            this._shadowRoot.innerHTML+=`
         
@@ -30,5 +33,7 @@ class Genres extends HTMLElement{
         }
         
     }
+    getDataBase()
+}
 }
 window.customElements.define('genres-cnm',Genres)

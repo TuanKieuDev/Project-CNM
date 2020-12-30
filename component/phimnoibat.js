@@ -1,12 +1,12 @@
 const style =`
 img{
     width:220px;
-    height:270px
+    height:270px;
 }
 .container{
-    margin-left:-40%;
+    margin-left:-25%;
 }
-.h3{
+h3{
     color:orange
 }
 h4{
@@ -23,35 +23,45 @@ h4:hover{
     margin-bottom: 5%
 }
 `
-import {getData} from '../data.js'
+import {getDataFromDoc,getDataFromDocs} from '../utils.js'
+
 class Phimnoibat extends HTMLElement{
-    database
+
     constructor(){
         super();
-        this.database = getData()
+        
         this._shadowRoot = this.attachShadow({mode: 'open'})
     }
     connectedCallback(){
   
        
    
-        let list = this.database.map((item)=>{
-            if(item.sta=='noi')
-            return `
-             <div class='noibat'>
-             <img src='${item.img}'>
-             <h4>${item.name}</h4>
-             </div> 
-             `
-        })
-
-        this._shadowRoot.innerHTML=`
-        <style>${style}</style>
-        <div class='container'>
-        <h3>Phim Nổi Bật</h3>
-        <div class='phimnoibat'> ${list} </div>
-        </div>
-        `
+        const getDataBase= async()=> {
+            const dataBase = await firebase.firestore().collection('dataBase').where("sta","==","noibat").get();;
+            let result = getDataFromDocs(dataBase);
+           //  return getDataFrlengthomDocs(dataBase)
+           let list = result.map((item)=>{
+               return `
+               <div class='noibat'>
+               <img src="${item.img}"> 
+               <h4>${item.name}</h4>
+               </div>
+               
+               
+               `
+           })
+           this._shadowRoot.innerHTML=`
+                   <style>${style}</style>
+                   <div class='container'>
+                   <h3>Phim Nổi Bật</h3>
+                   <div class='phimnoibat'> ${list} </div>
+                   </div>
+                   `
+           
+       }
+         
+           getDataBase()
+    
     
     
 }

@@ -5,7 +5,6 @@ const style= `
         background-color: #0c2738;
         color:#74a8cf;
         width: 100%;
-        position: absolute;
         bottom: 0;
     }
     li i{
@@ -53,6 +52,8 @@ p{
 
   }
 `
+import { redirect } from "../index.js";
+
 class Footer extends HTMLElement{
     constructor(){
         super();
@@ -75,16 +76,16 @@ class Footer extends HTMLElement{
         </ul>
     </div>
     <div class="theloai">
-        <a href="http://">Hành động</a>
-        <a href="http://">Kinh dị</a>
-        <a href="http://">Viễn tưởng</a>
-        <a href="http://">Hoạt hình</a>
+        <p id='hanh-dong'>Hành động</p>
+        <p id='kinh-di'>Kinh dị</p>
+        <p id='vien-tuong'>Viễn tưởng</p>
+        <p id='hoat-hinh'>Hoạt hình</p>
     </div>
     <div class="quocgia">
-        <a href="">Phim Mỹ</a>
-        <a href="">Phim Hàn Quốc</a>
-        <a href="">Phim Trung Quốc</a>
-        <a href="">Phim Việt Nam</a>
+        <p id='phim-my'>Phim Mỹ</p>
+        <p id='phim-han'>Phim Hàn Quốc</p>
+        <p id='phim-trung'>Phim Trung Quốc</p>
+        <p id='phim-viet' >Phim Việt Nam</p>
     </div>
     <div class="connect">
         <a href=""><i style="font-size: 25px;" class="fa fa-facebook-square" aria-hidden="true"></i><p>Facebook</p></a>
@@ -95,7 +96,16 @@ class Footer extends HTMLElement{
 </div>
       
     `
-
+    
+    this._shadowroot.querySelector('.theloai').addEventListener('click', (e) => {
+        window.genres = e.target.id
+        console.log(genres);
+        redirect('genres')
+      })
+      this._shadowroot.querySelector('.quocgia').addEventListener('click',(e)=>{
+        window.genres = e.target.id
+        redirect('genres')
+      })
  
 }
   

@@ -83,8 +83,9 @@ async function checkAuthen() {
             redirect('home')
         }
     } else {
-        redirect('login')
+        redirect('home')
     }
 }
 
 redirect('home')
+// exam

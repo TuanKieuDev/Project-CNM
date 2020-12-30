@@ -31,7 +31,7 @@ router
         }
       },
     '*': function () {
-      router.navigate('login')
+      router.navigate('home')
     }
   })
 
