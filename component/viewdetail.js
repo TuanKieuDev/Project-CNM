@@ -22,6 +22,7 @@ class ViewDetail extends HTMLElement{
            <p>Thể loại: ${result.theloai}</p>
            <p>Lượt xem: ${result.view}</p>
            <p>${result.description}<p>
+    
            <div class='vote'>
            <p id='1'> 1 </p>
            <p id='2'> 2 </p>
@@ -44,21 +45,27 @@ class ViewDetail extends HTMLElement{
             })
             this._shadowRoot.querySelector('.vote').addEventListener('click', (e) => {
                 window.vot = e.target.id
+                let vott = Number(vot)
+                // console.log(typeof(vott));
                 let ratecounts = result.ratecount
+                console.log(`ratecount đầu ${ratecounts}`);
                 let rates = result.rate
+                console.log(`rate đầu ${rates}`);
+
                 ratecounts++
-                rates+=vot
-                let diem = rates/ratecounts
+                rates+=vott
+                let  diem = rates/ratecounts
                 const danhgia ={
                     rate:rates,
                     ratecount:ratecounts,
                     diem
                 }
                 firebase.firestore().collection('dataBase').doc(id).update(danhgia)
-
-                console.log(vot);
-                console.log(rates);
-                console.log(ratecounts);
+                console.log('=======');
+                console.log(`sao vote ${vott}`);
+                console.log(`tổng số sao vote ${rates}`);
+                console.log(`số lần vote ${ratecounts}`);
+                console.log(`Điểm: ${diem}`);
               })
     
 }
