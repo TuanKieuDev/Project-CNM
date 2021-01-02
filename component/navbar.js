@@ -94,7 +94,7 @@ class Navbar extends HTMLElement{
    <div class="bar">
 		<ul class="tab">
 			<li class="tab-item home">
-				<a href="index.html">HOME</a>
+				<a id='home'>HOME</a>
 			</li>
 			<li class="tab-item" >
                 <span>Thể Loại</span>
@@ -141,6 +141,10 @@ class Navbar extends HTMLElement{
       window.genres = e.target.id
       redirect('genres')
     })
+    this._shadowRoot.querySelector('#Forum').addEventListener('click',()=>{
+      router.navigate('forum')})
+    this._shadowRoot.querySelector('#home').addEventListener('click',()=>{
+      router.navigate('home')})
 }
   
    

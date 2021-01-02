@@ -11,6 +11,10 @@ router
     'register': function () {
      redirect('register')
     },
+    'view':function(){
+        redirect('view')
+    }
+    ,
     'forum': function () {
         redirect('forum')
      },
@@ -20,6 +24,9 @@ router
      'genres': function () {
         redirect('genres')
        },
+    'watch':function(){
+        redirect('watch')
+    },
      'countries': function () {
         redirect('countries')
        },
@@ -89,10 +96,10 @@ async function checkAuthen() {
         if (res.empty) {
             redirect('login')
         } else {
-            redirect('home')
+            redirect('register')
         }
     } else {
-        redirect('login')
+        redirect('home')
     }
 }
 window.router = router

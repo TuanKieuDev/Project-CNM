@@ -24,6 +24,7 @@ import './component/phimhot.js'
 import './component/phimmoi.js'
 import './component/phimnoibat.js'
 import './component/search.js'
+// import './component/quocgia.js'
 // import './data.js'
 import './screen/search-screen.js'
 import './component/genres.js'
@@ -83,12 +84,12 @@ async function checkAuthen() {
         if (res.empty) {
             redirect('login')
         } else {
-            redirect('home')
+            redirect('register')
         }
     } else {
         redirect('home')
     }
 }
 
-redirect('home')
+
 // exam

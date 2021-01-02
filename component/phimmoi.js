@@ -20,10 +20,7 @@ img{
     color:orange;
     margin-left:3%
 }
-.container{
-    width: 85%;
-    margin-left: 6.5%;
-}
+
 h4{
     color:aqua;
     text-align:center;
@@ -44,11 +41,10 @@ class Phimmoi extends HTMLElement{
         const getDataBase= async()=> {
             const dataBase = await firebase.firestore().collection('dataBase').where("sta","==","new").get();;
             let result = getDataFromDocs(dataBase);
-           //  return getDataFrlengthomDocs(dataBase)
            let list = result.map((item)=>{
                return `
                <div class='moi'>
-        <phim-comnponent img=${item.img} name = ${item.name} id = ${item.id}></phim-comnponent>
+        <phim-comnponent img="${item.img}" name = "${item.name}" id = "${item.id}"></phim-comnponent>
                
                </div>
                `

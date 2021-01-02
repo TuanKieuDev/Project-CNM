@@ -15,8 +15,7 @@ img{
     flex-wrap:wrap;
 }
 .container{
-    width:160%;
-    margin-left:-35%
+    width:10%;
 }
 .container h3{
     font-size:1.5rem;
@@ -52,7 +51,7 @@ class Phim extends HTMLElement{
             `
     this._shadowRoot.querySelectorAll('.text')[0].addEventListener('click',()=>{
         localStorage.setItem('id',this.id);
-        redirect('view')
+        router.navigate('view')
     })
 
     }

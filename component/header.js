@@ -124,7 +124,7 @@ class Headers extends HTMLElement{
      let searcht= this._shadowRoot.querySelectorAll('.search-text')[0];
      let searchs = searcht.value;
      localStorage.setItem('search-text',searchs)
-     alert('k')
+     
      redirect('search')
     })
 

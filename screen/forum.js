@@ -35,6 +35,8 @@ class forumScreen extends HTMLElement{
         </style>
         <div class = "forum-container">
         <cnm-header></cnm-header>
+        <navbar-cnm></navbar-cnm>
+
         <div class="main">
         <img class="banner" src="../images/banner-qc.jpg" width="100px" height="100%">
         <div class="forum-main">

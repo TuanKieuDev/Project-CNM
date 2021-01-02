@@ -41,20 +41,30 @@ const style =`
     }
   }
 `
+import {getDataFromDoc,getDataFromDocs} from '../utils.js'
+
 class watchScreen extends HTMLElement{
     constructor(){
         super()
         this._shadowRoot = this.attachShadow({mode: 'open'})
     }
     connectedCallback(){
+        const getDataBase = async()=> {
+            let id = localStorage.getItem('id');
+            const dataBase = await firebase.firestore().collection('dataBase').doc(id).get();
+            let result = getDataFromDoc(dataBase);
+
+
         this._shadowRoot.innerHTML= `
         <style>${style}</style>
         <div class = "watch-container">
         <cnm-header></cnm-header>
+        <navbar-cnm></navbar-cnm>
+
         <div class="main">
         <img class="banner" src="../images/banner-qc.jpg" width="100px" height="100%">
         <div class="watch-main">
-        <center><iframe width="100%" height="550" src="https://www.youtube.com/embed/mbzHzvoMxsk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+        <center><iframe width="100%" height="550" src="${result.video}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
         <button id="ep">Ep 1</button>
         <avt-text id="comment"></avt-text>
         </div>
@@ -65,6 +75,7 @@ class watchScreen extends HTMLElement{
         </div>
         `
     }
+    getDataBase()
 }
-    
+}   
 window.customElements.define('watch-screen',watchScreen)

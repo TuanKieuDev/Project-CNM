@@ -48,7 +48,7 @@ class Phimhot extends HTMLElement{
     let list = result.map((item)=>{
         return `
         <div class='hot'>
-        <phim-comnponent img=${item.img} name = ${item.name} id = ${item.id}></phim-comnponent>
+        <phim-comnponent img="${item.img}" name = "${item.name}" id = "${item.id}"></phim-comnponent>
         </div>
         `
     })

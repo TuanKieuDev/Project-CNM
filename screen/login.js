@@ -1,59 +1,4 @@
 const style = `
-.login-container {
-  width: 100vw;
-  height: 100vh;
-  
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  justify-content: flex-end;
-}
-#login-form{
-  width: 100%;
-  background: #fff;
-  height: 100vh;
-  padding: 0px 20px;
-}
-h1{
-  text-align: center;
-  color: #333;
-}
-button {
-  display: block;
-  width: 12%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: #4a4a4a;
-  background: #fdd835;
-  border-color: #fdd835;
-  margin:auto;
-  border-style:none;
-  border-radius:5px;
-  cursor:pointer;
-  margin-bottom:10px;
-}
-button:hover{
-  background-color:red;
-  color:white;
-}
-
-a{
-  cursor: pointer;
-}
-
-a:hover{
-  color: cornflowerblue;
-}
-#login-form {
-  width: 100%;
-  background: #fff;
-  height: 100vh;
-  padding: 0px 20px;
-}
-.login-form{
-  width:50%;
-  margin:auto;
-}
 
 
 `;
@@ -71,8 +16,8 @@ class loginScreen extends HTMLElement {
         ${style}
         </style>
         <div class="login-container">
-            <form id="login-form">
-            <cnm-header></cnm-header>
+            
+            <cnm-header> </cnm-header>
             <navbar-cnm></navbar-cnm>
                 <h1> Đăng Nhập</h1>
                <div class="login-form">
@@ -82,8 +27,8 @@ class loginScreen extends HTMLElement {
                 <button id="redirect">Đăng kí</button>
                 </div>
               
-                <cnm-footer></cnm-footer>
-            </form>
+            <cnm-footer></cnm-footer>
+           
         </div>
         `;
 

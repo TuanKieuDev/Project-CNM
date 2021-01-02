@@ -1,11 +1,9 @@
 const style =`
 img{
-    width:220px;
-    height:270px;
+    width: 120px;
+    height:170px;
 }
-.container{
-    margin-left:-25%;
-}
+
 h3{
     color:orange
 }
@@ -37,13 +35,13 @@ class Phimnoibat extends HTMLElement{
        
    
         const getDataBase= async()=> {
-            const dataBase = await firebase.firestore().collection('dataBase').where("sta","==","noibat").get();;
+            const dataBase = await firebase.firestore().collection('dataBase').where("sta","==","noi").get();;
             let result = getDataFromDocs(dataBase);
            //  return getDataFrlengthomDocs(dataBase)
            let list = result.map((item)=>{
                return `
                <div class='noibat'>
-           <phim-comnponent img=${item.img} name = ${item.name} id = ${item.id}></phim-comnponent>
+           <phim-comnponent img="${item.img}" name = "${item.name}" id = "${item.id}"></phim-comnponent>
                
 
                </div>

@@ -13,6 +13,9 @@ const style =`
     justify-content: space-between;
     margin: auto;
 }
+.noibat{
+    margin-left: -8%
+}
 `
 import {redirect} from '../index.js'
 class homeScreen extends HTMLElement{
