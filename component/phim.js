@@ -4,7 +4,7 @@ img{
     height: 270px
 }
 
-.hot{
+.texts{
     border: 1px solid #dbdbdb;
     margin-left: 10%;
     margin-bottom: 5%;
@@ -44,13 +44,13 @@ class Phim extends HTMLElement{
         this.img = this.getAttribute('img');
         this.id = this.getAttribute('id');
     this._shadowRoot.innerHTML=`
-          
-        <div class='phim'>
+         <style>${style}</style>
+        <div class='text'>
         <img src="${this.img}">
         <h4>${this.name}</h4>
         </div>
             `
-    this._shadowRoot.querySelectorAll('.phim')[0].addEventListener('click',()=>{
+    this._shadowRoot.querySelectorAll('.text')[0].addEventListener('click',()=>{
         localStorage.setItem('id',this.id);
         redirect('view')
     })
