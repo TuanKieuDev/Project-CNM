@@ -1,4 +1,4 @@
-export function getData(){
+ function Data(){
     return [
        {
            name : 'BLOODSHOT',
@@ -456,3 +456,7 @@ export function getData(){
    
    ] 
 }
+function add(){
+    firebase.firestore().collection('dataBase').add(Data);
+}
+add()
