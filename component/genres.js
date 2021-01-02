@@ -61,6 +61,12 @@ class Genres extends HTMLElement{
                     <phim-comnponent img="${item.img}" name="${item.name}" id="${item.id}"></phim-comnponent>
                     </div>
                     `}
+                    if(item.year==genres){
+                        html+=  `
+                        <div class='gen'>
+                        <phim-comnponent img="${item.img}" name="${item.name}" id="${item.id}"></phim-comnponent>
+                        </div>
+                        `}
             }
        
         //    let list = result.map((item)=>{

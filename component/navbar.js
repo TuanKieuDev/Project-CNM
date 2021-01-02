@@ -24,7 +24,7 @@ ul li{
   background-color: #1a2036;
   height:35px
 }
-.theloai, .quocgia, .more{
+.theloai, .quocgia, .more, .nam{
   display: none;
 }
 .tab-item{
@@ -66,6 +66,11 @@ p:hover{
 
 }
 .tab-item:hover .more{
+  display: block;
+  z-index:1;
+
+}
+.tab-item:hover .nam{
   display: block;
   z-index:1;
 
@@ -115,8 +120,15 @@ class Navbar extends HTMLElement{
                         <p id="phimtrungquoc">Phim Trung Quốc</p>
                     </div>
 			</li>
-			<li class='tab-item'>
-				<div class="phimdecu">Phim Đề Cử</div>
+			<li class="tab-item">
+				<span>Năm</span>
+                    <div class="nam">
+                        <p id="2016">Năm 2016</p>
+                        <p id="2017">Năm 2017</p>
+                        <p id="2018">Năm 2018</p>
+                        <p id="2019">Năm 2019</p>
+                        <p id="2020">Năm 2020</p>
+                    </div>
 			</li>
 			<li class='tab-item'>
                 <div class="tab-item">
@@ -139,6 +151,11 @@ class Navbar extends HTMLElement{
     })
     this._shadowRoot.querySelector('.quocgia').addEventListener('click',(e)=>{
       window.genres = e.target.id
+      redirect('genres')
+    })
+    this._shadowRoot.querySelector('.nam').addEventListener('click', (e) => {
+      window.genres = e.target.id
+      console.log(genres);
       redirect('genres')
     })
     this._shadowRoot.querySelector('#Forum').addEventListener('click',()=>{

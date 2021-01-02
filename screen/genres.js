@@ -59,6 +59,21 @@ class genresScreen extends HTMLElement{
         if(genres == 'phimtrungquoc'){
             gen='Phim Trung Quốc'
         }
+        if(genres == '2016'){
+            gen='Phim Năm 2016'
+        }
+        if(genres == '2017'){
+            gen='Phim Năm 2017'
+        }
+        if(genres == '2018'){
+            gen='Phim Năm 2018'
+        }
+        if(genres == '2019'){
+            gen='Phim Năm 2019'
+        }
+        if(genres == '2020'){
+            gen='Phim Năm 2020'
+        }
         this._shadowRoot.innerHTML= `
         <style>${style}</style>
         <div class = "genres-container">
@@ -69,9 +84,7 @@ class genresScreen extends HTMLElement{
         <div class='gen1'>
         <genres-cnm> </genres-cnm>
         </div>
-        <div class='gen2'>
-        <phimnoibat-cnm></phimnoibat-cnm>
-        </div>
+
         </div>
         <cnm-footer></cnm-footer>
         </div>
