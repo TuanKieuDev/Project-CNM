@@ -43,8 +43,11 @@ a{
 p{
     margin-top: 4px;
     margin-left: 4px;
+    cursor:pointer;
 }
-
+p:hover{
+    opacity: 0.5;
+}
 @media only screen and (max-width: 600px) {
     .theloai, .quocgia, .connect {
         display:none;
@@ -88,7 +91,7 @@ class Footer extends HTMLElement{
         <p id='phim-viet' >Phim Việt Nam</p>
     </div>
     <div class="connect">
-        <a href=""><i style="font-size: 25px;" class="fa fa-facebook-square" aria-hidden="true"></i><p>Facebook</p></a>
+        <a href="https://www.facebook.com/Ci-N%C3%AA-M%C3%AA-101821988517057"><i style="font-size: 25px;" class="fa fa-facebook-square" aria-hidden="true"></i><p>Facebook</p></a>
         <a href=""><i style="font-size: 25px;" class="fa fa-twitter-square" aria-hidden="true"></i><p> Twitter</p></a>
         <a href=""><i style="font-size: 25px;" class="fa fa-instagram" aria-hidden="true"></i> <p>Instagram</p></a>
     </div>

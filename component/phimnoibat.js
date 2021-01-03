@@ -5,7 +5,8 @@ img{
 }
 
 h3{
-    color:orange
+    color:orange;
+    text-align:center;
 }
 h4{
     color:aqua;

@@ -75,6 +75,12 @@ p:hover{
   z-index:1;
 
 }
+.tab-item:hover{
+  color:#00F706;
+}
+#home:hover{
+  color: #00F706;
+}
 `
 
 class Navbar extends HTMLElement{

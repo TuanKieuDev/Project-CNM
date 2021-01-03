@@ -16,6 +16,7 @@ const style = `
     margin-top:20px;
     font-size:16px;
     overflow-wrap: break-word;
+    background-color:white;
 }
 .chat-item .author-name{
     color: blue;
