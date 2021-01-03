@@ -16,6 +16,11 @@ const style =`
 .noibat{
     margin-left: -8%
 }
+.moi{
+    width: 83%;
+    margin-left: 7%;
+    margin-top: -3%;
+}
 `
 import {redirect} from '../index.js'
 class homeScreen extends HTMLElement{

@@ -11,6 +11,7 @@ import './component/star-rate.js'
 import './screen/home.js'
 import './screen/countries.js'
 // import './screen/detail.js'
+
 import './screen/phimhanhdongscr.js'
 import './screen/phimhanquocscr.js'
 import './screen/phimhoathinhscr.js'
