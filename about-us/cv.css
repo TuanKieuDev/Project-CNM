@@ -1,0 +1,12 @@
+a{
+    text-decoration: none;
+}
+
+nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top {
+    padding: 5px;
+}
+
+a.nav-link{
+    font-size: 16px;
+
+}
