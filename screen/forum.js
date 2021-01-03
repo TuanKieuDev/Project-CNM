@@ -9,10 +9,13 @@ const style = `
     margin: 2% 10%;
     height:1000px;
     overflow:scroll;
+    background-image: url("https://i.pinimg.com/originals/bb/7d/23/bb7d23adbd196a85e9d696fcfa4b86ce.png")
+
 }
 .main{
     display:flex;
     justify-content: space-between;
+    background-color: #081b27;
 }
 
 @media only screen and (max-width: 600px) {

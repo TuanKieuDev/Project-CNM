@@ -10,7 +10,9 @@ img{
     display:flex;
 }
 h3{
-    color:orange
+    color:orange;
+    text-align:center;
+    font-size:xx-large;
 }
 h4{
     color:aqua;
@@ -24,6 +26,9 @@ h4:hover{
     border: 1px solid #dbdbdb;
     width: max-content;
     margin-bottom: 5%
+}
+.gen1{
+    width:100%;
 }
 `
 import {getDataFromDoc,getDataFromDocs} from '../utils.js'

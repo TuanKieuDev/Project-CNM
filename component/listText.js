@@ -5,7 +5,7 @@ class ListText extends HTMLElement{
         this._shadowDom = this.attachShadow({mode: 'open'})
     }
     async connectedCallback(){
-        const res = await firebase.firestore().collection('posts').get()
+        const res = await firebase.firestore().collection('posts').orderBy("time","desc").get()
         this.listenCollectionChange()
         const listPost = getDataFromDocs(res)
         let html=''
