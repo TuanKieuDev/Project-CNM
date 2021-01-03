@@ -89,7 +89,7 @@ class Headers extends HTMLElement{
             <img src="images/your-logo .png" alt="logo" width="160px" >
         </div>
         <form id="search">
-             <input type="text" class="search-text">
+             <input type="text" class="search-text" placeholder="Nhập tên phim...">
              <button>
                  <i class="fa fa-search" aria-hidden="true"></i>
              </button>

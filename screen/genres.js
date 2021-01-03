@@ -8,6 +8,7 @@ img{
 }
 .gen{
     display:flex;
+    justify-content: space-between;
 }
 h3{
     color:orange;
@@ -29,6 +30,10 @@ h4:hover{
 }
 .gen1{
     width:100%;
+}
+img{
+    width: 100px;
+    height: 100%;
 }
 `
 import {getDataFromDoc,getDataFromDocs} from '../utils.js'
@@ -86,10 +91,11 @@ class genresScreen extends HTMLElement{
         <navbar-cnm></navbar-cnm>
         <h3>${gen}</h3>
         <div class='gen'>
+        <img class="banner" src="../images/banner-qc.jpg" width="100px" height="100%">
         <div class='gen1'>
         <genres-cnm> </genres-cnm>
         </div>
-
+        <img class="banner" src="../images/banner-qc.jpg" width="100px" height="100%">
         </div>
         <cnm-footer></cnm-footer>
         </div>

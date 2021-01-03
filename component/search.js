@@ -32,7 +32,7 @@ class Search extends HTMLElement{
                 return  `
                  <div class='container'>
                  <phim-comnponent img=${item.img} name = ${item.name} id = ${item.id}></phim-comnponent>
-
+                
                  </div>
                  `;
             })

@@ -30,6 +30,13 @@ h4:hover{
     color:red;
     cursor:pointer
 }
+.text{
+    cursor:pointer;
+}
+
+img:hover{
+    opacity:0.5;
+}
 `
 import { redirect } from '../navigo.js';
 import {getDataFromDoc,getDataFromDocs} from '../utils.js'

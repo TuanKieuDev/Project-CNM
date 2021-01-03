@@ -84,15 +84,15 @@ class slide extends HTMLElement{
      <style>${style}</style>
      <div class="slideshow-container">
      <div class="mySlides fade">
-       <img src="https://www.cgv.vn/media/banner/cache/1/b58515f018eb873dafa430b6f9ae0c1e/p/o/poster-ddc-_980x448_.jpg" style="width:200%">
+       <img src="https://3.bp.blogspot.com/-RVWhTsKFO10/Vu0R6RjuhpI/AAAAAAAAC34/tDEWr9nlfjUOznbllTqepitzInQOW_pQw/s1600/%255Bstartuanit.net%255D_hinh-anh-hinh-nen-spiderman%2B%25281%2529.jpg" style="width:200%">
      </div>
 
      <div class="mySlides fade">
-       <img src="https://www.cgv.vn/media/banner/cache/1/b58515f018eb873dafa430b6f9ae0c1e/w/w/ww84_ctkc_980x448.jpg" style="width:200%">
+       <img src="https://thegioidienanh.vn/stores/news_dataimages/anhvu/082019/06/23/in_article/1036_2.jpg" style="width:200%">
      </div>
 
      <div class="mySlides fade">
-       <img src="https://www.cgv.vn/media/banner/cache/1/b58515f018eb873dafa430b6f9ae0c1e/9/8/980x448-min_1_.png" style="width:200%">
+       <img src="https://www.ubackground.com/_ph/22/725046547.jpg" style="width:200%">
      </div>
    </div>
    <br>
