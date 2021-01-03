@@ -37,6 +37,9 @@ const style= `
 .theloai,.quocgia,.connect{
     margin: 10px 0;
 }
+.theloai,.quocgia{
+    cursor:pointer;
+}
 a{
     text-decoration: none;
 }
@@ -70,7 +73,7 @@ class Footer extends HTMLElement{
     <div class="container">
     <div class="logo-footer">
         <ul>
-            <li style="font-size: 25px;">CINEMA.COM</li>
+            <li style="font-size: 25px;" id='cine'>CINEMA.COM</li>
             <li> <i style="font-size: 60px; margin-left: 33%;
                 margin-top: 8px;" class="fa fa-play-circle" aria-hidden="true"></i> </li>
         </ul>
@@ -82,10 +85,10 @@ class Footer extends HTMLElement{
         <p id='hoat-hinh'>Hoạt hình</p>
     </div>
     <div class="quocgia">
-        <p id='phim-my'>Phim Mỹ</p>
-        <p id='phim-han'>Phim Hàn Quốc</p>
-        <p id='phim-trung'>Phim Trung Quốc</p>
-        <p id='phim-viet' >Phim Việt Nam</p>
+        <p id='phimmy'>Phim Mỹ</p>
+        <p id='phimhanquoc'>Phim Hàn Quốc</p>
+        <p id='phimtrungquoc'>Phim Trung Quốc</p>
+        <p id='phimvietnam' >Phim Việt Nam</p>
     </div>
     <div class="connect">
         <a href=""><i style="font-size: 25px;" class="fa fa-facebook-square" aria-hidden="true"></i><p>Facebook</p></a>
@@ -97,16 +100,31 @@ class Footer extends HTMLElement{
       
     `
     
-    this._shadowroot.querySelector('.theloai').addEventListener('click', (e) => {
+    this._shadowroot.querySelectorAll('.theloai')[0].addEventListener('click', (e) => {
         window.genres = e.target.id
-        console.log(genres);
-        redirect('genres')
+        if(genres=='hanh-dong'){
+        router.navigate('hanhdong')}
+        if(genres=='kinh-di'){
+        router.navigate('kinhdi')}
+        if(genres=='hoat-hinh'){
+        router.navigate('hoathinh')}
+        if(genres=='vien-tuong'){
+        router.navigate('vientuong')}
       })
-      this._shadowroot.querySelector('.quocgia').addEventListener('click',(e)=>{
+      this._shadowroot.querySelectorAll('.quocgia')[0].addEventListener('click',(e)=>{
         window.genres = e.target.id
-        redirect('genres')
+        if(genres=='phimvietnam'){
+          router.navigate('vietnam')}
+        if(genres=='phimmy'){
+          router.navigate('my')}
+          if(genres=='phimtrungquoc'){
+          router.navigate('trungquoc')}
+          if(genres=='phimhanquoc'){
+          router.navigate('hanquoc')}
       })
- 
+    this._shadowroot.querySelector('#cine').addEventListener('click',()=>{
+        router.navigate('home')
+    })
 }
   
    

@@ -11,6 +11,19 @@ import './component/star-rate.js'
 import './screen/home.js'
 import './screen/countries.js'
 // import './screen/detail.js'
+import './screen/phimhanhdongscr.js'
+import './screen/phimhanquocscr.js'
+import './screen/phimhoathinhscr.js'
+import './screen/phimkinhdiscr.js'
+import './screen/phimmyscr.js'
+import './screen/phimnam2016.js'
+import './screen/phimnam2017.js'
+import './screen/phimnam2018.js'
+import './screen/phimnam2019.js'
+import './screen/phimnam2020.js'
+import './screen/phimtrungquocscr.js'
+import './screen/phimvientuongscr.js'
+import './screen/phimvietnamscr.js'
 import './screen/forum.js'
 import './screen/genres.js'
 import './screen/watch.js'
@@ -67,7 +80,47 @@ export function redirect(screenName){
 
     } if (screenName === 'login') {        
         document.getElementById('app').innerHTML = `<login-screen> </login-screen>` }
-
+    if(screenName =='hanhdong'){
+        document.getElementById('app').innerHTML = `<phimhanhdong-scr> </phimhanhdong-scr>`
+    }
+    if(screenName =='hanquoc'){
+        document.getElementById('app').innerHTML = `<phimhanquoc-scr> </phimhanquoc-scr>`
+    }
+    if(screenName =='hoathinh'){
+        document.getElementById('app').innerHTML = `<phimhoathinh-scr> </phimhoathinh-scr>`
+    }
+    if(screenName =='kinhdi'){
+        document.getElementById('app').innerHTML = `<phimkinhdi-scr> </phimkinhdi-scr>`
+    }
+    if(screenName =='my'){
+        document.getElementById('app').innerHTML = `<phimmy-scr> </phimmy-scr>`
+    }
+    if(screenName =='2016'){
+        document.getElementById('app').innerHTML = `<phim2016-scr> </phim2016-scr>`
+    }
+    if(screenName =='2017'){
+        document.getElementById('app').innerHTML = `<phim2017-scr> </phim2017-scr>`
+    }
+    if(screenName =='2018'){
+        document.getElementById('app').innerHTML = `<phim2018-scr> </phim2018-scr>`
+    }
+    if(screenName =='2019'){
+        document.getElementById('app').innerHTML = `<phim2019-scr> </phim2019-scr>`
+    }
+    if(screenName =='2020'){
+        document.getElementById('app').innerHTML = `<phim2020-scr> </phim2020-scr>`
+    }
+    if(screenName =='trungquoc'){
+        document.getElementById('app').innerHTML = `<phimtrungquoc-scr> </phimtrungquoc-scr>`
+    }
+    if(screenName =='vietnam'){
+        document.getElementById('app').innerHTML = `<phimvietnam-scr> </phimvietnam-scr>`
+    }
+    if(screenName==='vientuong'){
+        document.getElementById('app').innerHTML = `
+        <phimvientuong-scr></phimvientuong-scr>
+        `
+    }
     if (screenName === 'search') {        
         document.getElementById('app').innerHTML = `<search-screen> </search-screen>` }
 

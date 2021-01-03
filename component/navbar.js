@@ -146,17 +146,38 @@ class Navbar extends HTMLElement{
     // this._shadowRoot.querySelector('hanhdong').addEventListener('click',filter('Hành Động'))
     this._shadowRoot.querySelector('.theloai').addEventListener('click', (e) => {
       window.genres = e.target.id
-      console.log(genres);
-      redirect('genres')
+      if(genres=='hanh-dong'){
+      router.navigate('hanhdong')}
+      if(genres=='kinh-di'){
+      router.navigate('kinhdi')}
+      if(genres=='hoat-hinh'){
+      router.navigate('hoathinh')}
+      if(genres=='vien-tuong'){
+      router.navigate('vientuong')}
     })
     this._shadowRoot.querySelector('.quocgia').addEventListener('click',(e)=>{
       window.genres = e.target.id
-      redirect('genres')
+      if(genres=='phimvietnam'){
+        router.navigate('vietnam')}
+      if(genres=='phimmy'){
+        router.navigate('my')}
+        if(genres=='phimtrungquoc'){
+        router.navigate('trungquoc')}
+        if(genres=='phimhanquoc'){
+        router.navigate('hanquoc')}
     })
     this._shadowRoot.querySelector('.nam').addEventListener('click', (e) => {
       window.genres = e.target.id
-      console.log(genres);
-      redirect('genres')
+      if(genres=='2016'){
+        router.navigate('2016')}
+        if(genres=='2017'){
+        router.navigate('2017')}
+        if(genres=='2018'){
+        router.navigate('2018')}
+        if(genres=='2019'){
+        router.navigate('2019')}
+        if(genres=='2020'){
+          router.navigate('2020')}
     })
     this._shadowRoot.querySelector('#Forum').addEventListener('click',()=>{
       router.navigate('forum')})

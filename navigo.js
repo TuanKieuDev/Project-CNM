@@ -30,6 +30,35 @@ router
     'forum':function(){
         redirect('forum')
     },
+    
+    'hanhdong':function(){
+        redirect('hanhdong')
+    },
+    'hanquoc':function(){
+        redirect('hanquoc')
+    },'hoathinh':function(){
+        redirect('hoathinh')
+    },'kinhdi':function(){
+        redirect('kinhdi')
+    },'my':function(){
+        redirect('my')
+    },'2016':function(){
+        redirect('2016')
+    },'2017':function(){
+        redirect('2017')
+    },'2018':function(){
+        redirect('2018')
+    },'2019':function(){
+        redirect('2019')
+    },'2020':function(){
+        redirect('2020')
+    },'trungquoc':function(){
+        redirect('trungquoc')
+    },'vientuong':function(){
+        redirect('vientuong')
+    },'vietnam':function(){
+        redirect('vietnam')
+    },
      'countries': function () {
         redirect('countries')
        },
@@ -77,6 +106,49 @@ router
         document.getElementById('app').innerHTML = `
         <genres-screen></genres-screen>
         `
+    }
+    if(screenName==='hanhdong'){
+        document.getElementById('app').innerHTML = `
+        <phimhanhdong-scr></phimhanhdong-scr>
+        `
+    }
+    if(screenName==='vientuong'){
+        document.getElementById('app').innerHTML = `
+        <phimvientuong-scr></phimvientuong-scr>
+        `
+    }
+    if(screenName =='hanquoc'){
+        document.getElementById('app').innerHTML = `<phimhanquoc-scr> </phimhanquoc-scr>`
+    }
+    if(screenName =='hoathinh'){
+        document.getElementById('app').innerHTML = `<phimhoathinh-scr> </phimhoathinh-scr>`
+    }
+    if(screenName =='kinhdi'){
+        document.getElementById('app').innerHTML = `<phimkinhdi-scr> </phimkinhdi-scr>`
+    }
+    if(screenName =='my'){
+        document.getElementById('app').innerHTML = `<phimmy-scr> </phimmy-scr>`
+    }
+    if(screenName =='2016'){
+        document.getElementById('app').innerHTML = `<phim2016-scr> </phim2016-scr>`
+    }
+    if(screenName =='2017'){
+        document.getElementById('app').innerHTML = `<phim2017-scr> </phim2017-scr>`
+    }
+    if(screenName =='2018'){
+        document.getElementById('app').innerHTML = `<phim2018-scr> </phim2018-scr>`
+    }
+    if(screenName =='2019'){
+        document.getElementById('app').innerHTML = `<phim2019-scr> </phim2019-scr>`
+    }
+    if(screenName =='2020'){
+        document.getElementById('app').innerHTML = `<phim2020-scr> </phim2020-scr>`
+    }
+    if(screenName =='trungquoc'){
+        document.getElementById('app').innerHTML = `<phimtrungquoc-scr> </phimtrungquoc-scr>`
+    }
+    if(screenName =='vietnam'){
+        document.getElementById('app').innerHTML = `<phimvietnam-scr> </phimvietnam-scr>`
     }
     if(screenName==='view'){
         document.getElementById('app').innerHTML = `
