@@ -162,7 +162,7 @@ class RegisterScreen extends HTMLElement {
     this._shadowRoot
       .getElementById("redirect")
       .addEventListener("click", () => {
-        router.navigate('/login');
+        router.navigate('login');
       });
   }
   setError(id, message) {

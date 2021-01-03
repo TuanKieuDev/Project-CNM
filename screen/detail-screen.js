@@ -11,6 +11,7 @@ class detailScreen extends HTMLElement{
         <cnm-header></cnm-header>
         <navbar-cnm></navbar-cnm>
         <viewdetail-cnm></viewdetail-cnm>
+
         <cnm-footer></cnm-footer>
         </div>
         `

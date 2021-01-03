@@ -18,18 +18,12 @@ class ViewDetail extends HTMLElement{
             <img src='${result.img}'>
            <h4>${result.name}<h4>
            <button class='watch'>Xem Phim</button>
-           <p id='rate'>Đánh giá: ${result.rate}<p>
+           <p id='rate'>Điểm: ${result.diem}<p>
            <p>Thể loại: ${result.theloai}</p>
            <p>Lượt xem: ${result.view}</p>
            <p>${result.description}<p>
-    
-           <div class='vote'>
-           <p id='1'> 1 </p>
-           <p id='2'> 2 </p>
-           <p id='3'> 3 </p>
-           <p id='4'> 4 </p>
-           <p id='5'> 5 </p>
-           </div>
+           <star-rate></star-rate>
+            
            
             `
             this._shadowRoot.querySelectorAll('.watch')[0].addEventListener('click',()=>{ 
@@ -43,30 +37,7 @@ class ViewDetail extends HTMLElement{
                 firebase.firestore().collection('dataBase').doc(id).update(viewphim)
                 router.navigate('watch')
             })
-            this._shadowRoot.querySelector('.vote').addEventListener('click', (e) => {
-                window.vot = e.target.id
-                let vott = Number(vot)
-                // console.log(typeof(vott));
-                let ratecounts = result.ratecount
-                console.log(`ratecount đầu ${ratecounts}`);
-                let rates = result.rate
-                console.log(`rate đầu ${rates}`);
-
-                ratecounts++
-                rates+=vott
-                let  diem = rates/ratecounts
-                const danhgia ={
-                    rate:rates,
-                    ratecount:ratecounts,
-                    diem
-                }
-                firebase.firestore().collection('dataBase').doc(id).update(danhgia)
-                console.log('=======');
-                console.log(`sao vote ${vott}`);
-                console.log(`tổng số sao vote ${rates}`);
-                console.log(`số lần vote ${ratecounts}`);
-                console.log(`Điểm: ${diem}`);
-              })
+           
     
 }
     getDataBase()

@@ -65,7 +65,7 @@ const style =`
               z-index:0
           }
           .dots{
-            margin-top:-35px
+            margin-top:-20px
           }
         
 `
