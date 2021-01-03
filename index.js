@@ -82,12 +82,14 @@ async function checkAuthen() {
             .where("email", "==", user.email).where("password", "==", user.password)
             .get();
         if (res.empty) {
-            redirect('login')
+            // redirect('login')
+            return false
         } else {
-            redirect('register')
+            // redirect('register')
+            return true
         }
     } else {
-        redirect('home')
+        return false
     }
 }
 

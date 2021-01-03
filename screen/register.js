@@ -5,15 +5,10 @@ const style = `
   
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
+ 
   justify-content: flex-end;
 }
-#register-form{
-  width: 100%;
-  background: #fff;
-  height: 100vh;
-  padding: 0px 20px;
-}
+
 h1{
   text-align: center;
   color: #333;
@@ -44,12 +39,7 @@ a{
 a:hover{
   color: cornflowerblue;
 }
-#register-form {
-  width: 100%;
-  background: #fff;
-  height: 100vh;
-  padding: 0px 20px;
-}
+
 .register-form{
   width:50%;
   margin:auto;
@@ -86,10 +76,12 @@ class RegisterScreen extends HTMLElement {
         <style>
         ${style}
         </style>
-        <div class="register-container">
-            <form id="register-form">
-            <cnm-header></cnm-header>
+        <cnm-header></cnm-header>
             <navbar-cnm></navbar-cnm>
+        <div class="register-container">
+            
+            
+            <form id="register-form">
                 <h1> Đăng Kí Tài Khoản </h1>
                 <div class="register-form">
                 <input-wrapper id="first-name" type="text" placeholder="First Name"></input-wrapper>
@@ -100,21 +92,20 @@ class RegisterScreen extends HTMLElement {
                 <button>Đăng kí</button>
                 <a id="redirect">Đã có tài khoản? Đăng nhập</a>
                 </div>
-                <cnm-footer></cnm-footer>
-            </form>
+                
+                </form>
         </div>
+        <cnm-footer></cnm-footer>
         `
 
-    const registerForm = this._shadowRoot.getElementById("register-form");
+    const registerForm = this._shadowRoot.getElementById("register-form")
     registerForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const firstName = this._shadowRoot.getElementById("first-name").value;
       const lastName = this._shadowRoot.getElementById("last-name").value;
       const email = this._shadowRoot.getElementById("email").value;
       const password = this._shadowRoot.getElementById("password").value;
-      const confrimPassword = this._shadowRoot.getElementById(
-        "confrim-passwrod"
-      ).value;
+      const confrimPassword = this._shadowRoot.getElementById("confrim-passwrod").value;
       let isValid = true;
 
       if (firstName.trim() === "") {
@@ -171,7 +162,7 @@ class RegisterScreen extends HTMLElement {
     this._shadowRoot
       .getElementById("redirect")
       .addEventListener("click", () => {
-        router.navigate("login");
+        router.navigate('/login');
       });
   }
   setError(id, message) {

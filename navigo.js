@@ -27,6 +27,9 @@ router
     'watch':function(){
         redirect('watch')
     },
+    'forum':function(){
+        redirect('forum')
+    },
      'countries': function () {
         redirect('countries')
        },
@@ -34,6 +37,8 @@ router
         const check = await checkAuthen ()
         if ( check ) {
             redirect('home')
+        }else{
+            router.navigate('login')
         }
       },
     '*': function () {
@@ -61,6 +66,11 @@ router
     if(screenName==='detail'){
         document.getElementById('app').innerHTML = `
         <detail-screen></detail-screen>
+        `
+    }
+    if(screenName==='forum'){
+        document.getElementById('app').innerHTML = `
+        <forum-screen></forum-screen>
         `
     }
     if(screenName==='genres'){
@@ -94,12 +104,12 @@ async function checkAuthen() {
             .where("email", "==", user.email).where("password", "==", user.password)
             .get();
         if (res.empty) {
-            redirect('login')
+            return false
         } else {
-            redirect('register')
+           return true
         }
     } else {
-        redirect('home')
+        return false
     }
 }
 window.router = router
