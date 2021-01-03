@@ -59,6 +59,9 @@ router
     },'vietnam':function(){
         redirect('vietnam')
     },
+    'welcome':function(){
+        redirect('welcome')
+    },
      'countries': function () {
         redirect('countries')
        },
@@ -71,7 +74,7 @@ router
         }
       },
     '*': function () {
-      router.navigate('home')
+      router.navigate('welcome')
     }
   })
 
@@ -80,6 +83,11 @@ router
     if(screenName==='home'){
         document.getElementById('app').innerHTML =`
         <home-screen></home-screen>
+        `
+    }
+    if(screenName==='welcome'){
+        document.getElementById('app').innerHTML =`
+        <welcome-scr></welcome-scr>
         `
     }
     if(screenName==='forum'){
