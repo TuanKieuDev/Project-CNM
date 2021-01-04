@@ -7,7 +7,9 @@ input{
     width:100%;
     border: 1px solid #dbdbdb;
     padding: 12px;
+    margin-top:6%;
     box-sizing: border-box;
+
 }
 .input-wrapper{
     margin-bottom: 10px;

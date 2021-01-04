@@ -12,6 +12,7 @@ import './screen/home.js'
 import './screen/countries.js'
 // import './screen/detail.js'
 import './screen/welcome.js'
+import './screen/search-screen.js'
 import './screen/phimhanhdongscr.js'
 import './screen/phimhanquocscr.js'
 import './screen/phimhoathinhscr.js'
@@ -122,8 +123,12 @@ export function redirect(screenName){
         <phimvientuong-scr></phimvientuong-scr>
         `
     }
-    if (screenName === 'search') {        
-        document.getElementById('app').innerHTML = `<search-screen> </search-screen>` }
+    if(screenName==='search'){
+        document.getElementById('app').innerHTML = `
+        <search-screen></search-screen>
+        `
+    }
+   
     if (screenName === 'welcome') {        
         document.getElementById('app').innerHTML = `<welcome-scr> </welcome-scr>` }
 

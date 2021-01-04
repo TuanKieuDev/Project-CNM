@@ -14,8 +14,11 @@ const style =`
     justify-content: space-between;
     background-color: #081b27;
 }
-
-#ep{
+.rates{
+    float:right;
+    margin-top:-1%
+}
+.ep{
     border-style:none;
     margin-left: 3%;
     margin-top: 1%;
@@ -27,7 +30,7 @@ const style =`
     outline:none;
 }
 
-#ep:hover{
+.ep:hover{
     background-color: #a61c21;
     color:white;
 }
@@ -65,7 +68,12 @@ class watchScreen extends HTMLElement{
         <img class="banner" src="../images/banner-qc.jpg" width="100px" height="100%">
         <div class="watch-main">
         <center><iframe width="100%" height="550" src="${result.video}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-        <button id="ep">Ep 1</button>
+        <button class="ep">Ep 1</button>
+        <button class="ep">Ep 2</button>
+        <button class="ep">Ep 3</button>
+        <div class='rates'>
+        <star-rate></star-rate>
+        </div>
         <avt-text id="comment"></avt-text>
         </div>
         <img class="banner" src="../images/banner-qc.jpg" width="100px" height="100%">

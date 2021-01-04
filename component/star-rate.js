@@ -3,6 +3,7 @@ const style = `
     float: left;
     height: 46px;
     padding: 0 10px;
+    margin-top:-10%
 }
 .rate:not(:checked) > input {
     position:absolute;
@@ -34,6 +35,9 @@ const style = `
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
 }
+h3{
+    color:white
+}
 `
 import {getDataFromDoc,getDataFromDocs} from '../utils.js'
 import { redirect } from '../navigo.js';
@@ -50,8 +54,8 @@ class Star extends HTMLElement{
             let result = getDataFromDoc(dataBase);
         this._shadowRoot.innerHTML =`
         <style>${style}</style>
-        <div class="rate">
         <h3>Bạn có thích bộ phim này?</h3>
+        <div class="rate">        
         <input type="radio" name="rate" value="5" />
         <label for="5" title="Tuyệt vời" id="5">5 stars</label>
         <input type="radio" name="rate" value="4" />
@@ -62,13 +66,9 @@ class Star extends HTMLElement{
         <label for="2" title="Không hay" id="2">2 stars</label>
         <input type="radio" name="rate" value="1" />
         <label for="1" title="Dở tệ" id="1">1 star</label>
+
       </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      
         `
         this._shadowRoot.querySelectorAll('.rate')[0].addEventListener('click', (e) => {
             window.vot = e.target.id
@@ -89,24 +89,10 @@ class Star extends HTMLElement{
             }
             firebase.firestore().collection('dataBase').doc(id).update(danhgia);
             alert(`Bạn đã đánh giá ${vott} sao`)
-            router.navigate('watch')
-            console.log('=======');
-            console.log(`sao vote ${vott}`);
-            console.log(`tổng số sao vote ${rates}`);
-            console.log(`số lần vote ${ratecounts}`);
-            console.log(`Điểm: ${diem}`);
+            this._shadowRoot.innerHTML.style.display=none;
+            // router.navigate('watch')
           })
-          this._shadowRoot.querySelectorAll('.rate')[0].addEventListener('click',()=>{ 
-            let count =result.view 
-            console.log(count);
-            count++
-            const viewphim ={
-                view:count
-            }
-            console.log(count);
-            firebase.firestore().collection('dataBase').doc(id).update(viewphim)
-            redirect('watch')
-        })
+        
             }
             getDataBase()
         }

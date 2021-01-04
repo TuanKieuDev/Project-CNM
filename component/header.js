@@ -78,6 +78,7 @@ class Headers extends HTMLElement{
         this._shadowRoot = this.attachShadow({mode: 'open'})
     }
     connectedCallback(){
+    
     this._shadowRoot.innerHTML=`
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
@@ -97,25 +98,23 @@ class Headers extends HTMLElement{
         
 
         <div class="log">
-            <div class = 'btn' id='btn-register' >Đăng ký </div>
+             
+            <div class = 'btn' id='logout' >Đăng xuất </div>
            
-            <div class='btn' id ='btn-login'>Đăng nhập</div>
+           
         </div>
    
     </div>
       
     `
-    const loginBtn = this._shadowRoot.getElementById("btn-login");
+    const loginBtn = this._shadowRoot.getElementById("logout");
     loginBtn.addEventListener("click", () => {
-      
-        router.navigate('login');
+        localStorage.removeItem('currentUser')
+        router.navigate('welcome');
     });
     
-    const registerBtn = this._shadowRoot.getElementById("btn-register");
-    registerBtn.addEventListener("click", () => {
-      
-        router.navigate('register');
-    });
+    const userName =localStorage.getItem('currentUser')
+    console.log(userName);
     
 
         
@@ -125,7 +124,8 @@ class Headers extends HTMLElement{
      let searchs = searcht.value;
      localStorage.setItem('search-text',searchs)
      
-     redirect('search')
+     redirect('search');
+     router.navigate('search')
     })
 
 

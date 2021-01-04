@@ -152,6 +152,7 @@ class Navbar extends HTMLElement{
     // this._shadowRoot.querySelector('hanhdong').addEventListener('click',filter('Hành Động'))
     this._shadowRoot.querySelector('.theloai').addEventListener('click', (e) => {
       window.genres = e.target.id
+      localStorage.setItem('idg',genres)
       if(genres=='hanh-dong'){
       router.navigate('hanhdong')}
       if(genres=='kinh-di'){
@@ -163,6 +164,7 @@ class Navbar extends HTMLElement{
     })
     this._shadowRoot.querySelector('.quocgia').addEventListener('click',(e)=>{
       window.genres = e.target.id
+      localStorage.setItem('idg',genres)
       if(genres=='phimvietnam'){
         router.navigate('vietnam')}
       if(genres=='phimmy'){
@@ -174,6 +176,8 @@ class Navbar extends HTMLElement{
     })
     this._shadowRoot.querySelector('.nam').addEventListener('click', (e) => {
       window.genres = e.target.id
+      localStorage.setItem('idg',genres)
+
       if(genres=='2016'){
         router.navigate('2016')}
         if(genres=='2017'){
@@ -187,9 +191,13 @@ class Navbar extends HTMLElement{
     })
     this._shadowRoot.querySelector('#Forum').addEventListener('click',()=>{
       router.navigate('forum')})
+      this._shadowRoot.querySelector('#About').addEventListener('click',()=>{
+      location.href ='../about-us/about-us.html'  
+      })
     this._shadowRoot.querySelector('#home').addEventListener('click',()=>{
       router.navigate('home')})
-}
+}    
+
   
    
 }

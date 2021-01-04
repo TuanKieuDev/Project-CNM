@@ -49,6 +49,9 @@ height: 100%;
 background-color: #000000c4;
 padding-top: 30px;
 }
+#login{
+    cursor:pointer
+}
 `
 import {getDataFromDoc,getDataFromDocs} from '../utils.js'
 import { redirect } from '../index.js';
@@ -71,20 +74,24 @@ class Welcome extends HTMLElement{
             <div class="logo">
                 <img src="images/your-logo .png" alt="" >
             </div>
-           <div class="login">
-               <button>Đăng nhập</button>
-           </div>
+           <form class="login">
+               <button id='login'>Đăng nhập</button>
+           </form>
     
-      </div>
+        </div>
+
           <div class="contenttex">
-        <h3>Xem phim không giới hạn </h3>
-        <h4>cùng bạn bè và người thân</h4>
-        <h3>Mọi lúc mọi nơi</h3>
-    </div>
+            <h3>Xem phim không giới hạn </h3>
+            <h4>cùng bạn bè và người thân</h4>
+            <h3>Mọi lúc mọi nơi</h3>
+           </div>
       </div>
        `
-       this._shadowRoot.querySelectorAll('.login')[0].addEventListener('click',
-       router.navigate('login')
+       this._shadowRoot.querySelectorAll('.login')[0].addEventListener('submit',(e)=>{
+           e.preventDefault()
+           router.navigate('login')
+       }
+    // redirect('login')
        )
       }
     wel()

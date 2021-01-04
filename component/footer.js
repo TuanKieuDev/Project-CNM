@@ -94,7 +94,7 @@ class Footer extends HTMLElement{
         <p id='phimvietnam' >Phim Việt Nam</p>
     </div>
     <div class="connect">
-        <a href="https://www.facebook.com/Ci-N%C3%AA-M%C3%AA-101821988517057"><i style="font-size: 25px;" class="fa fa-facebook-square" aria-hidden="true"></i><p>Facebook</p></a>
+        <a target="_blank" href="https://www.facebook.com/Ci-N%C3%AA-M%C3%AA-101821988517057"><i style="font-size: 25px;" class="fa fa-facebook-square" aria-hidden="true"></i><p>Facebook</p></a>
         <a href=""><i style="font-size: 25px;" class="fa fa-twitter-square" aria-hidden="true"></i><p> Twitter</p></a>
         <a href=""><i style="font-size: 25px;" class="fa fa-instagram" aria-hidden="true"></i> <p>Instagram</p></a>
     </div>

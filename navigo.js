@@ -18,6 +18,10 @@ router
     'forum': function () {
         redirect('forum')
      },
+     'search':function(){
+         redirect('search')
+     }
+     ,
     'detail': function () {
      redirect('detail')
      },
@@ -118,6 +122,11 @@ router
     if(screenName==='hanhdong'){
         document.getElementById('app').innerHTML = `
         <phimhanhdong-scr></phimhanhdong-scr>
+        `
+    }
+    if(screenName==='search'){
+        document.getElementById('app').innerHTML = `
+        <search-screen></search-screen>
         `
     }
     if(screenName==='vientuong'){

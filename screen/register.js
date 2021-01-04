@@ -1,21 +1,21 @@
 const style = `
-.register-container {
-  width: 100vw;
-  height: 100vh;
-  
-  background-repeat: no-repeat;
-  background-size: cover;
- 
-  justify-content: flex-end;
-}
 
+.container{
+  background: url('https://assets.nflxext.com/ffe/siteui/vlv3/9ec8d211-6a2a-460d-9b68-5d6bb1c57ee0/81b85bbc-83f5-452d-9d16-2364113bc412/VN-vi-20201228-popsignuptwoweeks-perspective_alpha_website_small.jpg?fbclid=IwAR0ewEfk2skznwoh3Q23r6aYlhoiCr0xeRqvpHDvcwpZIniNdDSHemZG3mM');
+  background-size: cover;
+  width: 100vw;
+  height:100vh;
+  opacity: 0.8;
+  filter: brightness(90%);
+  
+}
 h1{
   text-align: center;
-  color: #333;
+  color: white;
 }
 button {
   display: block;
-  width: 12%;
+  width: 40%;
   padding-top: 10px;
   padding-bottom: 10px;
   color: #4a4a4a;
@@ -25,7 +25,8 @@ button {
   border-style:none;
   border-radius:5px;
   cursor:pointer;
-  margin-bottom:10px;
+  margin-bottom:8%;
+  margin-top:10%
 }
 button:hover{
   background-color:red;
@@ -45,6 +46,31 @@ a:hover{
   margin:auto;
 }
 
+.content{
+position: fixed;
+z-index: 1;
+left: 0%;
+top: 0%;
+width: 100%;
+height: 100%;
+background-color: #000000c4;
+padding-top: 30px;
+    
+}
+.contenttex{
+  margin:auto;
+  padding:2%;
+  height: max-content;
+  width: 30%;
+  background-color:rgba(0,0,0,.75);
+}
+#redirect{
+  color:white;
+  margin-left:7%
+}
+.logo{
+  cursor:pointer
+}
 
 `
 
@@ -73,36 +99,39 @@ class RegisterScreen extends HTMLElement {
   }
   connectedCallback() {
     this._shadowRoot.innerHTML = ` 
-        <style>
-        ${style}
-        </style>
-        <cnm-header></cnm-header>
-            <navbar-cnm></navbar-cnm>
-        <div class="register-container">
-            
-            
-            <form id="register-form">
-                <h1> Đăng Kí Tài Khoản </h1>
-                <div class="register-form">
-                <input-wrapper id="first-name" type="text" placeholder="First Name"></input-wrapper>
-                <input-wrapper id="last-name" type="text" placeholder="Last Name"></input-wrapper> 
-                <input-wrapper id="email" type="text" placeholder="Email"></input-wrapper> 
-                <input-wrapper  id="password" type="password" placeholder="Password"></input-wrapper> 
-                <input-wrapper  id="confrim-passwrod" type="password" placeholder="Confirm password"></input-wrapper> 
-                <button>Đăng kí</button>
-                <a id="redirect">Đã có tài khoản? Đăng nhập</a>
-                </div>
-                
-                </form>
-        </div>
-        <cnm-footer></cnm-footer>
+       
+        <style>${style}</style>
+       <div class="container">
+         
+      </div>
+      <div class="content">
+             <div class="logo">
+                 <img src="images/your-logo .png" alt="" >
+              </div>
+          <div class="contenttex">
+         
+          <form id="register-form">
+           <h1> Đăng Kí Tài Khoản </h1>
+           <div class="register-form">
+            <input-wrapper class='input' id="first-name" type="text" placeholder="First Name"></input-wrapper>
+           
+            <input-wrapper class='input' id="email" type="text" placeholder="Email"></input-wrapper> 
+            <input-wrapper class='input'  id="password" type="password" placeholder="Password"></input-wrapper> 
+            <input-wrapper class='input'  id="confrim-passwrod" type="password" placeholder="Confirm password"></input-wrapper> 
+            <button>Đăng kí</button>
+            <a id="redirect">Đã có tài khoản? Đăng nhập</a>
+          </div>
+          
+          </form>
+    </div>
+    
+      </div>
         `
-
+      
     const registerForm = this._shadowRoot.getElementById("register-form")
     registerForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const firstName = this._shadowRoot.getElementById("first-name").value;
-      const lastName = this._shadowRoot.getElementById("last-name").value;
       const email = this._shadowRoot.getElementById("email").value;
       const password = this._shadowRoot.getElementById("password").value;
       const confrimPassword = this._shadowRoot.getElementById("confrim-passwrod").value;
@@ -112,10 +141,7 @@ class RegisterScreen extends HTMLElement {
         isValid = false;
         this.setError("first-name", "Please input first name");
       }
-      if (lastName.trim() === "") {
-        isValid = false;
-        this.setError("last-name", "Please input last name");
-      }
+     
       if (email.trim() === "") {
         isValid = false;
 
@@ -137,7 +163,7 @@ class RegisterScreen extends HTMLElement {
       }
      
       const user = {
-        fullName: firstName + "" + lastName,
+        fullName: firstName,
         email: email,
         password: CryptoJS.MD5(password).toString(),
       };
@@ -164,6 +190,11 @@ class RegisterScreen extends HTMLElement {
       .addEventListener("click", () => {
         router.navigate('login');
       });
+      this._shadowRoot
+      .querySelectorAll(".logo")[0]
+      .addEventListener("click", () => {
+        router.navigate('welcome');
+      });
   }
   setError(id, message) {
     this._shadowRoot.getElementById(id).setAttribute("error", message);
@@ -176,7 +207,7 @@ class RegisterScreen extends HTMLElement {
       .get();
     return !res.empty;
   }
-
+ 
   
 }
 

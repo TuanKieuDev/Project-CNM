@@ -14,6 +14,7 @@ img{
     width:100%;
     display:flex;
     flex-wrap:wrap;
+    margin-left:-5%
 }
 
 .container h3{
@@ -40,7 +41,7 @@ class Genres extends HTMLElement{
         super();
         
         this._shadowRoot = this.attachShadow({mode: 'open'})
-        console.log(genres)
+        // console.log(genres)
     }
     connectedCallback(){
         const getDataBase= async()=> {
@@ -48,20 +49,21 @@ class Genres extends HTMLElement{
             let result = getDataFromDocs(dataBase);
             let html = ``;
             for(let item of result){
-                if(item.genresSlug==genres){
+                const getidg = localStorage.getItem('idg')
+                if(item.genresSlug==getidg){
                    html+=  `
                     <div class='gen'>
                     <phim-comnponent img="${item.img}" name="${item.name}" id="${item.id}"> </phim-comnponent>
                     </div>`
                 }
         
-                    if(item.countrySlug==genres){
+                    if(item.countrySlug==getidg){
                     html+=  `
                     <div class='gen'>
                     <phim-comnponent img="${item.img}" name="${item.name}" id="${item.id}"></phim-comnponent>
                     </div>
                     `}
-                    if(item.year==genres){
+                    if(item.year==getidg){
                         html+=  `
                         <div class='gen'>
                         <phim-comnponent img="${item.img}" name="${item.name}" id="${item.id}"></phim-comnponent>
@@ -85,7 +87,7 @@ class Genres extends HTMLElement{
         //     `}
 
         // })
-        console.log(`day la ${html}`);
+        // console.log(`day la ${html}`);
         this._shadowRoot.innerHTML=`
                 <style>${style}</style>
                 <div class='container'>

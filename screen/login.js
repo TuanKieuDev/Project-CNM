@@ -1,22 +1,28 @@
 const style = `
-.login-container {
-  width: 100vw;
-  height: 100vh;
-  
-  background-repeat: no-repeat;
+.container{
+  background: url('https://assets.nflxext.com/ffe/siteui/vlv3/9ec8d211-6a2a-460d-9b68-5d6bb1c57ee0/81b85bbc-83f5-452d-9d16-2364113bc412/VN-vi-20201228-popsignuptwoweeks-perspective_alpha_website_small.jpg?fbclid=IwAR0ewEfk2skznwoh3Q23r6aYlhoiCr0xeRqvpHDvcwpZIniNdDSHemZG3mM');
   background-size: cover;
- 
-  justify-content: flex-end;
-}
+  width: 100vw;
+  height:100vh;
 
-h1{
+  filter: brightness(90%);
+  
+}
+#redirect{
+  margin-left:7%
+}
+h1, #redirect{
   text-align: center;
-  color: #333;
+  color: white;
 }
+#redirect:hover{
+  cursor:pointer;
 
+}
 button {
+  text-align: center;
   display: block;
-  width: 12%;
+  width: 40%;
   padding-top: 10px;
   padding-bottom: 10px;
   color: #4a4a4a;
@@ -26,7 +32,8 @@ button {
   border-style:none;
   border-radius:5px;
   cursor:pointer;
-  margin-bottom:10px;
+  margin-bottom:8%;
+  margin-top:10%;
 }
 button:hover{
   background-color:red;
@@ -37,7 +44,63 @@ button:hover{
   width:50%;
   margin:auto;
 }
-`;
+.content{
+  position: fixed;
+  z-index: 1;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: #000000c4;
+  padding-top: 30px;
+      
+  }
+  .contenttex{
+    margin:auto;
+    padding:2%;
+    height: max-content;
+    width: 30%;
+    background-color:rgba(0,0,0,.75);
+  }
+  .contentsub{
+    position: fixed;
+    z-index: 1;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #000000c4;
+    padding-top: 30px;
+    display:none;
+        
+    }
+    .contenttexsub{
+      margin:auto;
+      padding:2%;
+      height: max-content;
+      width: 25%;
+      /* background-color:rgba(0,0,0,.75);*/
+      background-color:white;
+      border-radius:10px;
+      margin-top:10%
+    }
+  .logo{
+    cursor:pointer
+  }
+  #success{
+    color:black;
+  }
+  h2{
+    font-size:1.5rem;
+    margin-left: 10%;
+  }
+  #sc{
+    height: 100px;
+    width: 100px;
+    margin-left: 25%;
+  }
+ 
+`
 
 import { getDataFromDocs, saveToLocalStorage } from "../utils.js";
 class loginScreen extends HTMLElement {
@@ -48,28 +111,47 @@ class loginScreen extends HTMLElement {
   }
   connectedCallback() {
     this._shadowRoot.innerHTML = ` 
-        <style>
-        ${style}
-        </style>
-        <cnm-header> </cnm-header>
-            <navbar-cnm></navbar-cnm>
-        <div class="login-container">
-            
-            
-            <form  id="login-form">
-                <h1> Đăng Nhập</h1>
+        
+        
+        
+        <style>${style}</style>
+      
+
+        <div class="container"> </div>
+       <div class="content">
+          <div class="logo">
+               <img  src="images/your-logo .png" alt="" >
+           </div>
+           <div class="contenttex">
+          
+               <form  id="login-form">
+              <h1> Đăng Nhập</h1>
                 
-               <div class="login-form">
-                <input-wrapper id="email" type="text" placeholder="Email"></input-wrapper> 
-                <input-wrapper  id="password" type="password" placeholder="Password"></input-wrapper> 
-                <button>Đăng nhập</button> 
-                <button id="redirect">Đăng kí</button>
+                 <div class="login-form">
+                    <input-wrapper id="email" type="text" placeholder="Email"></input-wrapper> 
+                    <input-wrapper  id="password" type="password" placeholder="Password"></input-wrapper> 
+                    <button>Đăng nhập</button> 
+                    <a id="redirect">Đã có tài khoản? Đăng nhập</a>
                 </div>
-                </form>
-            
-           
-        </div>
-        <cnm-footer></cnm-footer>
+              </form>
+          </div>
+     
+       </div>
+       <div class="contentsub">
+          
+           <div class="contenttexsub">
+          
+               
+              <h2 id='succes'> ĐĂNG NHẬP THÀNH CÔNG</h2>
+                
+                 <div class="login-form">
+                 <img id='sc' src='../images/success.png' />
+                    <button id='ok' style='width:75%'>Vào xem ngay</button> 
+                </div>
+              </form>
+          </div>
+     
+       </div>
         `;
 
     const loginForm = this._shadowRoot.getElementById("login-form");
@@ -106,14 +188,23 @@ class loginScreen extends HTMLElement {
         alert("sai email/ password");
       } else {
         saveToLocalStorage("currentUser", getDataFromDocs(user)[0]);
-        alert("Đăng nhập thành công")
-        router.navigate('/home');
+        // alert("Đăng nhập thành công")
+      this._shadowRoot.querySelectorAll('.contentsub')[0].style.display='block';
+      this._shadowRoot.querySelector('#ok').addEventListener('click',()=>{
+        router.navigate('home');
+      })
+        // router.navigate('/home');
       }
     });
     this._shadowRoot
       .getElementById("redirect")
       .addEventListener("click", () => {
-        router.navigate('/register');
+        router.navigate('register');
+      });
+      this._shadowRoot
+      .querySelectorAll(".logo")[0]
+      .addEventListener("click", () => {
+        router.navigate('welcome');
       });
   }
   setError(id, message) {

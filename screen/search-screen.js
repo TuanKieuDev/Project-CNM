@@ -29,6 +29,7 @@ class SearchScreen extends HTMLElement{
         <search-cnm></search-cnm>
         <cnm-footer></cnm-footer>
         </div>
+        
         `
     }
 }

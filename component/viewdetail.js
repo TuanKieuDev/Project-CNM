@@ -67,7 +67,6 @@ class ViewDetail extends HTMLElement{
                 <p>Thể loại: ${result.theloai}</p>
                 <p>Lượt xem: ${result.view}</p>
                 <p>${result.description}<p>
-                <star-rate></star-rate>
            </div> 
            </div>
            
