@@ -17,7 +17,7 @@ export function getDataFromDoc(doc) {
   export function getItemToLocalStorage(key) {
     return JSON.parse(localStorage.getItem(key))
   }
-
+//  ở đâu 
   export  function convertDate(dateStr){
     const date = new Date(dateStr)
     const day = validDate(date.getDate())

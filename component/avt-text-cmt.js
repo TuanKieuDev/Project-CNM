@@ -1,13 +1,13 @@
-import {getItemToLocalStorage, uploadFileToStorage} from '../utils.js'
+import {getItemToLocalStorage, uploadFileToStorage,getDataFromDoc} from '../utils.js'
 const style =`
-#create-post{
+#create-cmt{
     width: 60%;
     margin: auto;
     margin-top: 20px;
     text-align: right;
 
 }
-#create-post textarea{
+#create-cmt textarea{
     width: 100%;
     border: 1px solid #dbdbdb;
     font-size: larger;
@@ -15,44 +15,20 @@ const style =`
     outline: none;
 }
 
-#post{
+#cmt{
     background-color: aqua;
     padding: 10px 15px;
     border-radius: 5px;
     cursor:pointer;
 }
 
-// .inputfile {
-// 	width: 0.1px;
-// 	height: 0.1px;
-// 	opacity: 0;
-// 	overflow: hidden;
-// 	position: absolute;
-// 	z-index: -1;
-// }
-
-// .inputfile + label {
-//     font-size: 1.25em;
-//     font-weight: 700;
-//     color: white;
-//     background-color: black;
-//     display: inline-block;
-//     cursor: pointer;
-//     border-radius: 10px;
-//     padding: 5px 10px;
-// }
-
-// .inputfile:focus + label,
-// .inputfile + label:hover {
-//     background-color: red;
-// }
 @media only screen and (max-width: 600px) {
     #file {
         display:none;
     }
   }
 `
-class avaText extends HTMLElement{
+class avaTextCmt extends HTMLElement{
     constructor(){
         super();
         this._shadowroot = this.attachShadow({mode: 'open'})
@@ -60,14 +36,14 @@ class avaText extends HTMLElement{
      connectedCallback(){
         this._shadowroot.innerHTML=`
         <style>${style}</style>
-        <form id = "create-post">
+        <form id = "create-cmt">
             <textarea name="content" type="textarea" rows="6" id="content"></textarea>
-            <button id="post">Post</button>
+            <button id="cmt">Send</button>
         </form>
     
         `
-        const postForm = this._shadowroot.getElementById("create-post")
-        const postButton = this._shadowroot.getElementById("post")
+        const postForm = this._shadowroot.getElementById("create-cmt")
+        const postButton = this._shadowroot.getElementById("cmt")
         const postContent = this._shadowroot.getElementById("content")
         postButton.addEventListener("click", async (e) => {
           e.preventDefault()
@@ -86,15 +62,19 @@ class avaText extends HTMLElement{
         //   firebase.firestore().collection("stories").add(postData)
 
         //   alert("Post added!")
-        const res = await firebase.firestore().collection('posts').add(postData)
-        // const img = postForm.file.files
-        //   if(img.length>0){
-        //       const image = img[0]
-        //       const url = await uploadFileToStorage(image)
-        //       this.updateListFile(url, res.id)
-        //   }
+        // let id = localStorage.getItem('id');
+        // const res = await firebase.firestore().collection('dataBase').doc(id).FieldValue.arrayUnion('cmt').add(postData)
+        let id = localStorage.getItem('id');
+        const dataBase = await firebase.firestore().collection('dataBase').doc(id).get();
+        let result = getDataFromDoc(dataBase);
+        const cmt = {
+            cmt: firebase.firestore.FieldValue.arrayUnion(postData)
+        }
+        firebase.firestore().collection('dataBase').doc(id).update(cmt);
+        
+        
           
-          //console.log(img);
+        
           postContent.value = ''
         })
 
@@ -115,4 +95,4 @@ class avaText extends HTMLElement{
     
    
 }
-window.customElements.define('avt-text',avaText)
+window.customElements.define('avt-text-cmt',avaTextCmt)

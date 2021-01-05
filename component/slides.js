@@ -12,6 +12,7 @@ const style =`
             margin: auto;
             margin-top: 2%;
             margin-left: 10%;
+            
           }
           /* Ẩn các slider */
           .mySlides {

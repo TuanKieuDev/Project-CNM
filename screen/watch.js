@@ -65,7 +65,7 @@ class watchScreen extends HTMLElement{
         <navbar-cnm></navbar-cnm>
 
         <div class="main">
-        <img class="banner" src="../images/banner-qc.jpg" width="100px" height="100%">
+        <img class="banner" src="images/banner-qc.jpg" width="100px" height="100%">
         <div class="watch-main">
         <center><iframe width="100%" height="550" src="${result.video}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
         <button class="ep">Ep 1</button>
@@ -74,9 +74,10 @@ class watchScreen extends HTMLElement{
         <div class='rates'>
         <star-rate></star-rate>
         </div>
-        <avt-text id="comment"></avt-text>
+        <avt-text-cmt id="comment"></avt-text-cmt>
+        <list-text-cmt></list-text-cmt>
         </div>
-        <img class="banner" src="../images/banner-qc.jpg" width="100px" height="100%">
+        <img class="banner" src="images/banner-qc.jpg" width="100px" height="100%">
         </div>
         
         <cnm-footer></cnm-footer>
