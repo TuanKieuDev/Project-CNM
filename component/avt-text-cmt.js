@@ -84,12 +84,7 @@ class avaTextCmt extends HTMLElement{
         
 
     }
-    updateListFile(url,id){
-        const dataUpdate = {
-            files: firebase.firestore.FieldValue.arrayUnion(url)
-        }
-        firebase.firestore().collection('posts').doc(id).update(dataUpdate)
-    }
+    
     
 
     
