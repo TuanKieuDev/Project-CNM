@@ -16,6 +16,7 @@ const style =`
 }
 .rates{
     float:right;
+    
     margin-top:-1%
 }
 .ep{
