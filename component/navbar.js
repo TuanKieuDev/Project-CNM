@@ -81,6 +81,14 @@ p:hover{
 #home:hover{
   color: #00F706;
 }
+@media only screen and (max-width: 600px){
+  .tab{
+    width: 80%;
+  }
+  li{
+    margin: auto;
+  }
+}
 `
 
 class Navbar extends HTMLElement{
@@ -142,6 +150,7 @@ class Navbar extends HTMLElement{
                 <div class="more">
                     <p id="Forum">Forum</p>
                     <p id="About">About Us</p>
+                    <p id="Admin">Admin (only)</p>
                 </div>
             </div>
            </li>
@@ -191,6 +200,9 @@ class Navbar extends HTMLElement{
     })
     this._shadowRoot.querySelector('#Forum').addEventListener('click',()=>{
       router.navigate('forum')})
+
+      this._shadowRoot.querySelector('#Admin').addEventListener('click',()=>{
+        router.navigate('admin')}) 
       this._shadowRoot.querySelector('#About').addEventListener('click',()=>{
       location.href ='../about-us/about-us.html'  
       })

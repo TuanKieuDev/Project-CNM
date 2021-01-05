@@ -36,7 +36,12 @@ const style =`
         cursor: pointer;
     }
     .watch:hover{
-        background-color: beige;
+        background-color: red;
+        color: white;
+    }
+    #danger{
+        color: darkkhaki;
+        font-size: larger;
     }
 `
 
@@ -63,9 +68,12 @@ class ViewDetail extends HTMLElement{
                 </div>
             <div class="des">  
             <h4 class="title">${result.name}<h4>
-                <p id='rate'>Điểm:  ${result.diem}/5.00<p>
+                <p id='rate'>Điểm:  ${result.diem}/5.00 (${result.ratecount} đánh giá)<p>
                 <p>Thể loại: ${result.theloai}</p>
+                <p>Quốc gia: ${result.country}</p>
+                <p>Năm sản xuất: ${result.year}</p>
                 <p>Lượt xem: ${result.view}</p>
+                <p id="danger">Nội dung phim:</p>
                 <p>${result.description}<p>
            </div> 
            </div>

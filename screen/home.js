@@ -21,6 +21,17 @@ const style =`
     margin-left: 7%;
     margin-top: -3%;
 }
+
+@media only screen and (max-width: 600px){
+    .noibat{
+        display: none;
+    }
+    .sli{
+        display:none;
+    }
+    
+}
+
 `
 import {redirect} from '../index.js'
 class homeScreen extends HTMLElement{

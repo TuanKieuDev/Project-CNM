@@ -34,6 +34,9 @@ router
     'forum':function(){
         redirect('forum')
     },
+    'admin':function(){
+        redirect('admin')
+    },
     
     'hanhdong':function(){
         redirect('hanhdong')
@@ -94,11 +97,7 @@ router
         <welcome-scr></welcome-scr>
         `
     }
-    if(screenName==='forum'){
-        document.getElementById('app').innerHTML = `
-        <forum-screen></forum-screen>
-        `
-    }
+    
     if(screenName==='countries'){
         document.getElementById('app').innerHTML = `
         <countries-screen></countries-screen>
@@ -112,6 +111,11 @@ router
     if(screenName==='forum'){
         document.getElementById('app').innerHTML = `
         <forum-screen></forum-screen>
+        `
+    }
+    if(screenName==='admin'){
+        document.getElementById('app').innerHTML = `
+        <admin-screen></admin-screen>
         `
     }
     if(screenName==='genres'){

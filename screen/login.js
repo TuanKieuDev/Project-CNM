@@ -8,17 +8,15 @@ const style = `
   filter: brightness(90%);
   
 }
-#redirect{
-  margin-left:7%
-}
+
 h1, #redirect{
   text-align: center;
-  color: white;
-}
-#redirect:hover{
-  cursor:pointer;
 
 }
+#title{
+  color:white;
+}
+
 button {
   text-align: center;
   display: block;
@@ -125,13 +123,14 @@ class loginScreen extends HTMLElement {
            <div class="contenttex">
           
                <form  id="login-form">
-              <h1> Đăng Nhập</h1>
+              <h1 id="title"> Đăng Nhập</h1>
                 
                  <div class="login-form">
                     <input-wrapper id="email" type="text" placeholder="Email"></input-wrapper> 
                     <input-wrapper  id="password" type="password" placeholder="Password"></input-wrapper> 
                     <button>Đăng nhập</button> 
-                    <a id="redirect">Đã có tài khoản? Đăng nhập</a>
+                    <button id="redirect">Đăng kí</button> 
+
                 </div>
               </form>
           </div>

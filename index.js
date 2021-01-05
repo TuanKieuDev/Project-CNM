@@ -13,6 +13,7 @@ import './component/listTextCmt.js'
 import './screen/home.js'
 import './screen/countries.js'
 // import './screen/detail.js'
+import './screen/admin.js'
 import './screen/welcome.js'
 import './screen/search-screen.js'
 import './screen/phimhanhdongscr.js'
@@ -57,6 +58,11 @@ export function redirect(screenName){
     if(screenName==='forum'){
         document.getElementById('app').innerHTML = `
         <forum-screen></forum-screen>
+        `
+    }
+    if(screenName==='admin'){
+        document.getElementById('app').innerHTML = `
+        <admin-screen></admin-screen>
         `
     }
     if(screenName==='countries'){
