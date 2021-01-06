@@ -74,6 +74,11 @@ padding-top: 30px;
 .logo{
   cursor:pointer
 }
+@media only screen and (max-width: 700px){
+  .contenttex{
+    width:100%;
+  }
+}
 
 `
 

@@ -60,6 +60,18 @@ padding-top: 30px;
     background-color:red;
     color: white;
 }
+@media only screen and (max-width: 768px){
+    .contenttex{
+        font-size : 1rem;
+    }
+    .login{
+        margin-left: 35%;
+    }
+    .head{
+        display:grid;
+    }
+    
+  }
 `
 import {getDataFromDoc,getDataFromDocs} from '../utils.js'
 import { redirect } from '../index.js';

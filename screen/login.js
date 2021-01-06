@@ -111,6 +111,16 @@ button:hover{
   #redirect:hover{
     color:cornflowerblue;
   }
+  @media only screen and (max-width: 700px){
+    .contenttex{
+      width:100%;
+    }
+    #sc {
+      height: 50px;
+      width: 50px;
+      margin-left:0%;
+  }
+  }
 `
 
 import { getDataFromDocs, saveToLocalStorage } from "../utils.js";
