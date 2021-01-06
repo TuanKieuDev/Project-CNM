@@ -81,7 +81,7 @@ p:hover{
 #home:hover{
   color: #00F706;
 }
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 700px){
   .tab{
     width: 80%;
   }

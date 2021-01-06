@@ -63,7 +63,7 @@ outline: none;
     margin-top:10%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .logo {
         display:none;
     }
@@ -85,6 +85,10 @@ outline: none;
     }
     .log .btn{
         text-align: center;
+    }
+    #search{
+        width: 90%;
+        margin: auto;
     }
   }
 
