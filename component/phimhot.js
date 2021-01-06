@@ -31,6 +31,14 @@ h4:hover{
     color:red;
     cursor:pointer
 }
+@media only screen and (max-width: 600px) {
+    .container h3{
+        text-align:center;
+    }
+    .hot{
+        margin-left: 14%;
+    }
+  }
 `
 import {getDataFromDoc,getDataFromDocs} from '../utils.js'
 class Phimhot extends HTMLElement{

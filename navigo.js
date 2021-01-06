@@ -37,6 +37,9 @@ router
     'admin':function(){
         redirect('admin')
     },
+    'profile':function(){
+        redirect('profile')
+    },
     
     'hanhdong':function(){
         redirect('hanhdong')
@@ -95,6 +98,11 @@ router
     if(screenName==='welcome'){
         document.getElementById('app').innerHTML =`
         <welcome-scr></welcome-scr>
+        `
+    }
+    if(screenName==='profile'){
+        document.getElementById('app').innerHTML = `
+        <profile-scr></profile-scr>
         `
     }
     

@@ -68,6 +68,12 @@ const style =`
           .dots{
             margin-top:-20px
           }
+
+          @media only screen and (max-width: 1024px) {
+            .slideshow-container{
+              width:37%
+          }
+          }
         
 `
 class slide extends HTMLElement{

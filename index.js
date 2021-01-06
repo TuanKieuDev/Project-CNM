@@ -13,6 +13,7 @@ import './component/listTextCmt.js'
 import './screen/home.js'
 import './screen/countries.js'
 // import './screen/detail.js'
+import './screen/profile.js'
 import './screen/admin.js'
 import './screen/welcome.js'
 import './screen/search-screen.js'
@@ -63,6 +64,11 @@ export function redirect(screenName){
     if(screenName==='admin'){
         document.getElementById('app').innerHTML = `
         <admin-screen></admin-screen>
+        `
+    }
+    if(screenName==='profile'){
+        document.getElementById('app').innerHTML = `
+        <profile-scr></profile-scr>
         `
     }
     if(screenName==='countries'){

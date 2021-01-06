@@ -43,6 +43,18 @@ const style =`
         color: darkkhaki;
         font-size: larger;
     }
+    @media only screen and (max-width: 600px) {
+        img{
+            height:300px;
+            width:210px;
+        }
+        .movie-container{
+            display:block;
+        }
+        .main-detail{
+            display: inline-block;
+        }
+      }
 `
 
 

@@ -45,6 +45,14 @@ const style=`
         color:red;
         
     }
+    @media only screen and (max-width: 600px) {
+      .genres{
+          display:grid;
+      }
+      .IMAGE, .VIDEO label{
+        display:none;
+      }
+    }
     
 `
 

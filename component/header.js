@@ -48,8 +48,20 @@ outline: none;
     cursor:pointer;
     margin-top:-7px;
 }
-
-
+#wel{
+    color: #00F706;
+    cursor:pointer;
+}
+#wel:hover{
+    color:white;
+}
+.avt i{
+    margin-left: 38%;
+}
+#chao{
+    color: #00F706;
+    margin-top:10%;
+}
 
 @media only screen and (max-width: 600px) {
     .logo {
@@ -64,7 +76,16 @@ outline: none;
     .search-text{
         width:96%;
     }
-    
+    .avt i{
+        margin-left:50%;
+        
+    }
+    #chao{
+        text-align:center;
+    }
+    .log .btn{
+        text-align: center;
+    }
   }
 
 `
@@ -78,7 +99,8 @@ class Headers extends HTMLElement{
         this._shadowRoot = this.attachShadow({mode: 'open'})
     }
     connectedCallback(){
-    
+        const userName =localStorage.getItem('currentUser')
+        const user = JSON.parse(userName)
     this._shadowRoot.innerHTML=`
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
@@ -95,7 +117,10 @@ class Headers extends HTMLElement{
                  <i class="fa fa-search" aria-hidden="true"></i>
              </button>
         </form>
-        
+        <div class="avt">
+            <div id="chao">Xin chào ${user.fullName}</div>
+            <i class="fa fa-user-circle-o" aria-hidden="true" id="wel"></i>
+        </div>
 
         <div class="log">
              
@@ -113,7 +138,10 @@ class Headers extends HTMLElement{
         router.navigate('welcome');
     });
     
-    const userName =localStorage.getItem('currentUser')
+    const profile = this._shadowRoot.getElementById("wel");
+    profile.addEventListener("click", () => {
+        router.navigate('profile');
+    })
     console.log(userName);
     
 

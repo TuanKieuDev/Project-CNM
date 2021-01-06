@@ -97,7 +97,20 @@ button:hover{
     width: 100px;
     margin-left: 25%;
   }
- 
+  a{
+    cursor: pointer;
+  }
+  
+  a:hover{
+    color: cornflowerblue;
+  }
+  #redirect{
+    color:white;
+    margin-left:7%
+  }
+  #redirect:hover{
+    color:cornflowerblue;
+  }
 `
 
 import { getDataFromDocs, saveToLocalStorage } from "../utils.js";
@@ -129,7 +142,7 @@ class loginScreen extends HTMLElement {
                     <input-wrapper id="email" type="text" placeholder="Email"></input-wrapper> 
                     <input-wrapper  id="password" type="password" placeholder="Password"></input-wrapper> 
                     <button>Đăng nhập</button> 
-                    <button id="redirect">Đăng kí</button> 
+                    <a id="redirect">Chưa có tài khoản? Đăng kí</a> 
 
                 </div>
               </form>

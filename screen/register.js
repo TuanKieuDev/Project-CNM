@@ -46,6 +46,9 @@ a:hover{
   margin:auto;
 }
 
+#redirect:hover{
+  color:cornflowerblue;
+}
 .content{
 position: fixed;
 z-index: 1;
@@ -113,7 +116,7 @@ class RegisterScreen extends HTMLElement {
           <form id="register-form">
            <h1> Đăng Kí Tài Khoản </h1>
            <div class="register-form">
-            <input-wrapper class='input' id="first-name" type="text" placeholder="Name"></input-wrapper>
+            <input-wrapper class='input' id="first-name" type="text" placeholder="Username"></input-wrapper>
            
             <input-wrapper class='input' id="email" type="text" placeholder="Email"></input-wrapper> 
             <input-wrapper class='input'  id="password" type="password" placeholder="Password"></input-wrapper> 

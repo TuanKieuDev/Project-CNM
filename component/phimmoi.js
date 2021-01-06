@@ -29,6 +29,11 @@ h4:hover{
     color:red;
     cursor:pointer
 }
+@media only screen and (max-width: 600px) {
+    .container h3{
+        text-align:center;
+    }
+  }
 `
 import {getDataFromDoc,getDataFromDocs} from '../utils.js'
 

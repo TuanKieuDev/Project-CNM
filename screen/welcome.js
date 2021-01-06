@@ -24,12 +24,12 @@ h3,h4{
  margin-top: 2%
 }
 button{
-    background-color: orangered;
+    background-color: #fdd835;
 line-height: normal;
 padding: 7px 17px;
 font-weight: 400;
 font-size: 1rem;    
-color: white;
+border-radius: 5%;
 height: 20%;
 height: 50%;
 width: max-content;
@@ -51,6 +51,14 @@ padding-top: 30px;
 }
 #login{
     cursor:pointer
+}
+.login button{
+    border-style:none;
+    
+}
+#login:hover {
+    background-color:red;
+    color: white;
 }
 `
 import {getDataFromDoc,getDataFromDocs} from '../utils.js'
