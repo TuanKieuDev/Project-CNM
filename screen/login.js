@@ -167,7 +167,7 @@ class loginScreen extends HTMLElement {
               <h2 id='succes'> ĐĂNG NHẬP THÀNH CÔNG</h2>
                 
                  <div class="login-form">
-                 <img id='sc' src='../images/success.png' />
+                 <img id='sc' src='images/success.png' />
                     <button id='ok' style='width:75%'>Vào xem ngay</button> 
                 </div>
               </form>
