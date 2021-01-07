@@ -37,8 +37,8 @@ outline: none;
     cursor: pointer;
 }
 .log {
-    margin-top: 20px;
-    
+    margin-top: 2%;
+    margin-left: 10%;
 }
 .log .btn:hover{
     color:white
@@ -90,6 +90,9 @@ outline: none;
         width: 90%;
         margin: auto;
     }
+    .log{
+        margin-left: 0;
+    }
   }
 
 `
@@ -124,14 +127,15 @@ class Headers extends HTMLElement{
         <div class="avt">
             <div id="chao">Xin chào ${user.fullName}</div>
             <i class="fa fa-user-circle-o" aria-hidden="true" id="wel"></i>
-        </div>
-
-        <div class="log">
+            <div class="log">
              
             <div class = 'btn' id='logout' >Đăng xuất </div>
            
            
         </div>
+        </div>
+
+       
    
     </div>
       
